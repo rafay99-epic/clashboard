@@ -111,6 +111,7 @@ export const playerValidator = v.object({
   lastFetchedAt: v.number(),
   lastSuccessfulAt: v.number(),
   lastError: v.optional(v.string()),
+  verifiedAt: v.optional(v.number()),
 });
 
 export default defineSchema({

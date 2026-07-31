@@ -8,6 +8,7 @@ export type SyncStatus = "idle" | "syncing" | "error";
 export interface Account {
   tag: string;
   name: string;
+  verifiedAt?: number;
 }
 
 interface AppState {
@@ -22,6 +23,7 @@ interface AppState {
   addAccount: (tag: string, name: string) => void;
   switchAccount: (tag: string) => void;
   removeAccount: (tag: string) => void;
+  markVerified: (tag: string, verifiedAt: number) => void;
   setActiveBase: (base: BaseTab) => void;
   setSyncStatus: (status: SyncStatus) => void;
   setLastSyncAt: (ts: number) => void;
@@ -46,9 +48,13 @@ export const useAppStore = create<AppState>()(
 
       addAccount: (rawTag, name) => {
         const tag = normalizeTag(rawTag);
+        const previous = get().accounts.find((a) => a.tag === tag);
         const others = get().accounts.filter((a) => a.tag !== tag);
         set({
-          accounts: [...others, { tag, name }],
+          accounts: [
+            ...others,
+            { tag, name, verifiedAt: previous?.verifiedAt },
+          ],
           playerTag: tag,
           ...CLEAN,
         });
@@ -68,6 +74,15 @@ export const useAppStore = create<AppState>()(
           accounts,
           playerTag: wasActive ? (accounts[0]?.tag ?? null) : get().playerTag,
           ...(wasActive ? { lastSyncAt: null, ...CLEAN } : {}),
+        });
+      },
+
+      markVerified: (rawTag, verifiedAt) => {
+        const tag = normalizeTag(rawTag);
+        set({
+          accounts: get().accounts.map((a) =>
+            a.tag === tag ? { ...a, verifiedAt } : a,
+          ),
         });
       },
 

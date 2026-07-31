@@ -5,9 +5,11 @@ import { api } from "convex/_generated/api";
 import {
   ArrowLeftRight,
   ArrowRight,
+  BadgeCheck,
   Check,
   Loader2,
   Shield,
+  ShieldCheck,
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,10 +30,12 @@ export function SetupPage() {
   const addAccount = useAppStore((s) => s.addAccount);
   const switchAccount = useAppStore((s) => s.switchAccount);
   const removeAccount = useAppStore((s) => s.removeAccount);
+  const markVerified = useAppStore((s) => s.markVerified);
   const setSyncStatus = useAppStore((s) => s.setSyncStatus);
   const setLastSyncAt = useAppStore((s) => s.setLastSyncAt);
   const setLastError = useAppStore((s) => s.setLastError);
 
+  const [verifying, setVerifying] = useState<string | null>(null);
   const [input, setInput] = useState("");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -100,68 +104,102 @@ export function SetupPage() {
               return (
                 <div
                   key={account.tag}
-                  className="border-hairline flex items-center gap-3 border-b py-3 last:border-b-0"
+                  className="border-hairline flex flex-col gap-3 border-b py-3 last:border-b-0"
                 >
-                  <button
-                    type="button"
-                    onClick={() => switchAccount(account.tag)}
-                    disabled={active}
-                    className="group flex min-w-0 flex-1 items-center gap-3 text-left"
-                  >
-                    <span
-                      className={cn(
-                        "h-7 w-[3px] shrink-0 rounded-full transition-colors",
-                        active ? "bg-primary" : "bg-foreground/10",
-                      )}
-                    />
-                    <span className="min-w-0">
-                      <span
-                        className={cn(
-                          "block truncate text-sm font-semibold transition-colors",
-                          active
-                            ? "text-foreground"
-                            : "text-muted-foreground group-hover:text-foreground",
-                        )}
-                      >
-                        {account.name}
-                      </span>
-                      <span className="text-muted-foreground tnum block truncate text-xs">
-                        #{account.tag}
-                      </span>
-                    </span>
-                  </button>
-
-                  {active ? (
-                    <span className="text-primary flex items-center gap-1.5 text-xs font-medium">
-                      <Check className="h-3.5 w-3.5" />
-                      Active
-                    </span>
-                  ) : (
+                  <div className="flex items-center gap-3">
                     <button
                       type="button"
                       onClick={() => switchAccount(account.tag)}
-                      className="text-muted-foreground hover:text-primary flex items-center gap-1.5 text-xs font-medium transition-colors"
+                      disabled={active}
+                      className="group flex min-w-0 flex-1 items-center gap-3 text-left"
                     >
-                      <ArrowLeftRight className="h-3.5 w-3.5" />
-                      Switch
+                      <span
+                        className={cn(
+                          "h-7 w-[3px] shrink-0 rounded-full transition-colors",
+                          active ? "bg-primary" : "bg-foreground/10",
+                        )}
+                      />
+                      <span className="min-w-0">
+                        <span
+                          className={cn(
+                            "flex items-center gap-1.5 truncate text-sm font-semibold transition-colors",
+                            active
+                              ? "text-foreground"
+                              : "text-muted-foreground group-hover:text-foreground",
+                          )}
+                        >
+                          {account.name}
+                          {account.verifiedAt ? (
+                            <BadgeCheck className="text-success h-3.5 w-3.5 shrink-0" />
+                          ) : null}
+                        </span>
+                        <span className="text-muted-foreground tnum block truncate text-xs">
+                          #{account.tag}
+                          {account.verifiedAt ? " · verified owner" : ""}
+                        </span>
+                      </span>
                     </button>
-                  )}
 
-                  <button
-                    type="button"
-                    onClick={() => removeAccount(account.tag)}
-                    aria-label={`Remove ${account.name}`}
-                    className="text-muted-foreground/60 hover:text-destructive transition-colors"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
+                    {active ? (
+                      <span className="text-primary flex items-center gap-1.5 text-xs font-medium">
+                        <Check className="h-3.5 w-3.5" />
+                        Active
+                      </span>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => switchAccount(account.tag)}
+                        className="text-muted-foreground hover:text-primary flex items-center gap-1.5 text-xs font-medium transition-colors"
+                      >
+                        <ArrowLeftRight className="h-3.5 w-3.5" />
+                        Switch
+                      </button>
+                    )}
+
+                    {account.verifiedAt ? null : (
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setVerifying(
+                            verifying === account.tag ? null : account.tag,
+                          )
+                        }
+                        className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-xs font-medium transition-colors"
+                      >
+                        <ShieldCheck className="h-3.5 w-3.5" />
+                        Verify
+                      </button>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={() => removeAccount(account.tag)}
+                      aria-label={`Remove ${account.name}`}
+                      className="text-muted-foreground/60 hover:text-destructive transition-colors"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+
+                  {verifying === account.tag ? (
+                    <VerifyForm
+                      tag={account.tag}
+                      onVerified={(at) => {
+                        markVerified(account.tag, at);
+                        setVerifying(null);
+                      }}
+                      onCancel={() => setVerifying(null)}
+                    />
+                  ) : null}
                 </div>
               );
             })}
           </div>
           <p className="text-muted-foreground mt-2 text-xs">
             Switching is instant — each account keeps its own synced village and
-            battle log. Removing one only forgets it on this device.
+            battle log. Removing one only forgets it on this device. Verifying
+            proves the village is yours using the one-time API token from the
+            game.
           </p>
         </section>
       ) : null}
@@ -230,4 +268,79 @@ function cnInput(invalid: boolean) {
       ? "border-destructive"
       : "border-hairline focus:border-primary transition-colors",
   ].join(" ");
+}
+
+function VerifyForm({
+  tag,
+  onVerified,
+  onCancel,
+}: {
+  tag: string;
+  onVerified: (verifiedAt: number) => void;
+  onCancel: () => void;
+}) {
+  const verifyOwnership = useAction(api.players.verify.verifyOwnership);
+  const [token, setToken] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!token.trim()) return setError("Paste the token from the game first.");
+    setBusy(true);
+    setError(null);
+    try {
+      const result = await verifyOwnership({ playerTag: tag, token });
+      if (!result.ok) {
+        setError(friendlyError(result.error));
+        return;
+      }
+      if (!result.verified) {
+        setError(
+          "The game rejected that token. Tokens are single use and expire quickly — generate a fresh one and try again.",
+        );
+        return;
+      }
+      onVerified(result.verifiedAt ?? Date.now());
+    } catch (err) {
+      setError(friendlyError(err));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <form
+      onSubmit={submit}
+      className="border-hairline ml-[15px] flex flex-col gap-3 border-l pl-4"
+    >
+      <p className="text-muted-foreground text-xs">
+        In game: Settings → More Settings → API Token. The token is single use
+        and expires within minutes.
+      </p>
+      <div className="flex flex-wrap items-center gap-3">
+        <input
+          value={token}
+          autoFocus
+          spellCheck={false}
+          onChange={(e) => setToken(e.target.value)}
+          placeholder="abc123..."
+          aria-label={`API token for ${tag}`}
+          className="border-hairline focus:border-primary placeholder:text-muted-foreground/40 min-w-0 flex-1 border-b bg-transparent pb-1.5 font-mono text-sm transition-colors outline-none"
+        />
+        <Button type="submit" size="sm" disabled={busy || !token.trim()}>
+          {busy ? <Loader2 className="animate-spin" /> : <ShieldCheck />}
+          {busy ? "Checking…" : "Verify ownership"}
+        </Button>
+        <button
+          type="button"
+          onClick={onCancel}
+          className="text-muted-foreground hover:text-foreground text-xs transition-colors"
+        >
+          Cancel
+        </button>
+      </div>
+      {error ? <ErrorNote message={error} /> : null}
+    </form>
+  );
 }

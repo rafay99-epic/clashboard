@@ -17,7 +17,11 @@ interface RequestCtx {
   ) => Promise<unknown>;
 }
 
-export async function cocRequest<T>(ctx: RequestCtx, path: string): Promise<T> {
+export async function cocRequest<T>(
+  ctx: RequestCtx,
+  path: string,
+  body?: unknown,
+): Promise<T> {
   const secret = getCocApiToken();
 
   let lastError: CocApiError | null = null;
@@ -37,10 +41,13 @@ export async function cocRequest<T>(ctx: RequestCtx, path: string): Promise<T> {
     }
 
     const res = await fetch(`${COC_API_BASE}${path}`, {
+      method: body === undefined ? "GET" : "POST",
       headers: {
         Authorization: `Bearer ${secret}`,
         Accept: "application/json",
+        ...(body === undefined ? {} : { "Content-Type": "application/json" }),
       },
+      ...(body === undefined ? {} : { body: JSON.stringify(body) }),
     });
 
     if (res.status === 429) {

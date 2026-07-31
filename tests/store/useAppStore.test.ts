@@ -38,6 +38,20 @@ test("switching clears stale sync state", () => {
   expect(after.syncStatus).toBe("idle");
 });
 
+test("verification sticks to the account and survives a re-add", () => {
+  const s = useAppStore.getState();
+  s.addAccount("2PP", "A");
+  s.markVerified("#2pp", 1234);
+  expect(useAppStore.getState().accounts[0].verifiedAt).toBe(1234);
+
+  useAppStore.getState().addAccount("2PP", "A renamed");
+  expect(useAppStore.getState().accounts[0]).toEqual({
+    tag: "2PP",
+    name: "A renamed",
+    verifiedAt: 1234,
+  });
+});
+
 test("removing the active account falls back to another", () => {
   const s = useAppStore.getState();
   s.addAccount("2PP", "A");
