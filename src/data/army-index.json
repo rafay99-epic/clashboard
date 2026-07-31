@@ -1,0 +1,520 @@
+{
+  "u": {
+    "0": {
+      "name": "Barbarian",
+      "image": "images/home/troops/barbarian/icon.png",
+      "housing": 1
+    },
+    "1": {
+      "name": "Archer",
+      "image": "images/home/troops/archer/icon.png",
+      "housing": 1
+    },
+    "2": {
+      "name": "Goblin",
+      "image": "images/home/troops/goblin/icon.png",
+      "housing": 1
+    },
+    "3": {
+      "name": "Giant",
+      "image": "images/home/troops/giant/icon.png",
+      "housing": 5
+    },
+    "4": {
+      "name": "Wall Breaker",
+      "image": "images/home/troops/wall-breaker/icon.png",
+      "housing": 2
+    },
+    "5": {
+      "name": "Balloon",
+      "image": "images/home/troops/balloon/icon.png",
+      "housing": 5
+    },
+    "6": {
+      "name": "Wizard",
+      "image": "images/home/troops/wizard/icon.png",
+      "housing": 4
+    },
+    "7": {
+      "name": "Healer",
+      "image": "images/home/troops/healer/icon.png",
+      "housing": 14
+    },
+    "8": {
+      "name": "Dragon",
+      "image": "images/home/troops/dragon/icon.png",
+      "housing": 20
+    },
+    "9": {
+      "name": "P.E.K.K.A",
+      "image": "images/home/troops/pekka/icon.png",
+      "housing": 25
+    },
+    "10": {
+      "name": "Minion",
+      "image": "images/home/troops/minion/icon.png",
+      "housing": 2
+    },
+    "11": {
+      "name": "Hog Rider",
+      "image": "images/home/troops/hog-rider/icon.png",
+      "housing": 5
+    },
+    "12": {
+      "name": "Valkyrie",
+      "image": "images/home/troops/valkyrie/icon.png",
+      "housing": 8
+    },
+    "13": {
+      "name": "Golem",
+      "image": "images/home/troops/golem/icon.png",
+      "housing": 30
+    },
+    "15": {
+      "name": "Witch",
+      "image": "images/home/troops/witch/icon.png",
+      "housing": 12
+    },
+    "17": {
+      "name": "Lava Hound",
+      "image": "images/home/troops/lava-hound/icon.png",
+      "housing": 30
+    },
+    "22": {
+      "name": "Bowler",
+      "image": "images/home/troops/bowler/icon.png",
+      "housing": 6
+    },
+    "23": {
+      "name": "Baby Dragon",
+      "image": "images/home/troops/baby-dragon/icon.png",
+      "housing": 10
+    },
+    "24": {
+      "name": "Miner",
+      "image": "images/home/troops/miner/icon.png",
+      "housing": 6
+    },
+    "51": {
+      "name": "Wall Wrecker",
+      "image": "images/home/siege-machines/wall-wrecker/icon.png",
+      "housing": 1
+    },
+    "52": {
+      "name": "Battle Blimp",
+      "image": "images/home/siege-machines/battle-blimp/icon.png",
+      "housing": 1
+    },
+    "53": {
+      "name": "Yeti",
+      "image": "images/home/troops/yeti/icon.png",
+      "housing": 18
+    },
+    "58": {
+      "name": "Ice Golem",
+      "image": "images/home/troops/ice-golem/icon.png",
+      "housing": 15
+    },
+    "59": {
+      "name": "Electro Dragon",
+      "image": "images/home/troops/electro-dragon/icon.png",
+      "housing": 30
+    },
+    "62": {
+      "name": "Stone Slammer",
+      "image": "images/home/siege-machines/stone-slammer/icon.png",
+      "housing": 1
+    },
+    "65": {
+      "name": "Dragon Rider",
+      "image": "images/home/troops/dragon-rider/icon.png",
+      "housing": 25
+    },
+    "75": {
+      "name": "Siege Barracks",
+      "image": "images/home/siege-machines/siege-barracks/icon.png",
+      "housing": 1
+    },
+    "82": {
+      "name": "Headhunter",
+      "image": "images/home/troops/headhunter/icon.png",
+      "housing": 6
+    },
+    "87": {
+      "name": "Log Launcher",
+      "image": "images/home/siege-machines/log-launcher/icon.png",
+      "housing": 1
+    },
+    "91": {
+      "name": "Flame Flinger",
+      "image": "images/home/siege-machines/flame-flinger/icon.png",
+      "housing": 1
+    },
+    "92": {
+      "name": "Battle Drill",
+      "image": "images/home/siege-machines/battle-drill/icon.png",
+      "housing": 1
+    },
+    "95": {
+      "name": "Electro Titan",
+      "image": "images/home/troops/electro-titan/icon.png",
+      "housing": 32
+    },
+    "97": {
+      "name": "Apprentice Warden",
+      "image": "images/home/troops/apprentice-warden/icon.png",
+      "housing": 20
+    },
+    "110": {
+      "name": "Root Rider",
+      "image": "images/home/troops/root-rider/icon.png",
+      "housing": 20
+    },
+    "123": {
+      "name": "Druid",
+      "image": "images/home/troops/druid/icon.png",
+      "housing": 16
+    },
+    "132": {
+      "name": "Thrower",
+      "image": "images/home/troops/thrower/icon.png",
+      "housing": 16
+    },
+    "135": {
+      "name": "Troop Launcher",
+      "image": "images/home/siege-machines/troop-launcher/icon.png",
+      "housing": 1
+    },
+    "150": {
+      "name": "Furnace",
+      "image": "images/home/troops/furnace/icon.png",
+      "housing": 18
+    },
+    "177": {
+      "name": "Meteor Golem",
+      "image": "images/home/troops/meteor-golem/icon.png",
+      "housing": 40
+    }
+  },
+  "s": {
+    "0": {
+      "name": "Lightning Spell",
+      "image": "images/home/spells/lightning-spell/icon.png",
+      "housing": 1
+    },
+    "1": {
+      "name": "Healing Spell",
+      "image": "images/home/spells/healing-spell/icon.png",
+      "housing": 2
+    },
+    "2": {
+      "name": "Rage Spell",
+      "image": "images/home/spells/rage-spell/icon.png",
+      "housing": 2
+    },
+    "3": {
+      "name": "Jump Spell",
+      "image": "images/home/spells/jump-spell/icon.png",
+      "housing": 2
+    },
+    "5": {
+      "name": "Freeze Spell",
+      "image": "images/home/spells/freeze-spell/icon.png",
+      "housing": 1
+    },
+    "9": {
+      "name": "Poison Spell",
+      "image": "images/home/spells/poison-spell/icon.png",
+      "housing": 1
+    },
+    "10": {
+      "name": "Earthquake Spell",
+      "image": "images/home/spells/earthquake-spell/icon.png",
+      "housing": 1
+    },
+    "11": {
+      "name": "Haste Spell",
+      "image": "images/home/spells/haste-spell/icon.png",
+      "housing": 1
+    },
+    "16": {
+      "name": "Clone Spell",
+      "image": "images/home/spells/clone-spell/icon.png",
+      "housing": 3
+    },
+    "17": {
+      "name": "Skeleton Spell",
+      "image": "images/home/spells/skeleton-spell/icon.png",
+      "housing": 1
+    },
+    "28": {
+      "name": "Bat Spell",
+      "image": "images/home/spells/bat-spell/icon.png",
+      "housing": 1
+    },
+    "35": {
+      "name": "Invisibility Spell",
+      "image": "images/home/spells/invisibility-spell/icon.png",
+      "housing": 1
+    },
+    "53": {
+      "name": "Recall Spell",
+      "image": "images/home/spells/recall-spell/icon.png",
+      "housing": 2
+    },
+    "70": {
+      "name": "Overgrowth Spell",
+      "image": "images/home/spells/overgrowth-spell/icon.png",
+      "housing": 2
+    },
+    "98": {
+      "name": "Revive Spell",
+      "image": "images/home/spells/revive-spell/icon.png",
+      "housing": 2
+    },
+    "109": {
+      "name": "Ice Block Spell",
+      "image": "images/home/spells/ice-block-spell/icon.png",
+      "housing": 1
+    },
+    "120": {
+      "name": "Totem Spell",
+      "image": "images/home/spells/totem-spell/icon.png",
+      "housing": 1
+    }
+  },
+  "h": {
+    "0": {
+      "name": "Barbarian King",
+      "image": "images/home/heroes/barbarian-king/icon.png"
+    },
+    "1": {
+      "name": "Archer Queen",
+      "image": "images/home/heroes/archer-queen/icon.png"
+    },
+    "2": {
+      "name": "Grand Warden",
+      "image": "images/home/heroes/grand-warden/icon.png"
+    },
+    "4": {
+      "name": "Royal Champion",
+      "image": "images/home/heroes/royal-champion/icon.png"
+    },
+    "6": {
+      "name": "Minion Prince",
+      "image": "images/home/heroes/minion-prince/icon.png"
+    },
+    "7": {
+      "name": "Dragon Duke",
+      "image": "images/home/heroes/dragon-duke/icon.png"
+    }
+  },
+  "p": {
+    "0": {
+      "name": "L.A.S.S.I",
+      "image": "images/home/pets/lassi/icon.png"
+    },
+    "1": {
+      "name": "Mighty Yak",
+      "image": "images/home/pets/mighty-yak/icon.png"
+    },
+    "2": {
+      "name": "Electro Owl",
+      "image": "images/home/pets/electro-owl/icon.png"
+    },
+    "3": {
+      "name": "Unicorn",
+      "image": "images/home/pets/unicorn/icon.png"
+    },
+    "4": {
+      "name": "Phoenix",
+      "image": "images/home/pets/phoenix/icon.png"
+    },
+    "7": {
+      "name": "Poison Lizard",
+      "image": "images/home/pets/poison-lizard/icon.png"
+    },
+    "8": {
+      "name": "Diggy",
+      "image": "images/home/pets/diggy/icon.png"
+    },
+    "9": {
+      "name": "Frosty",
+      "image": "images/home/pets/frosty/icon.png"
+    },
+    "10": {
+      "name": "Spirit Fox",
+      "image": "images/home/pets/spirit-fox/icon.png"
+    },
+    "11": {
+      "name": "Angry Jelly",
+      "image": "images/home/pets/angry-jelly/icon.png"
+    },
+    "16": {
+      "name": "Sneezy",
+      "image": "images/home/pets/sneezy/icon.png"
+    },
+    "17": {
+      "name": "Greedy Raven",
+      "image": "images/home/pets/greedy-raven/icon.png"
+    }
+  },
+  "e": {
+    "0": {
+      "name": "Barbarian Puppet",
+      "image": "images/home/hero-equipment/barbarian-puppet/icon.png"
+    },
+    "1": {
+      "name": "Rage Vial",
+      "image": "images/home/hero-equipment/rage-vial/icon.png"
+    },
+    "2": {
+      "name": "Archer Puppet",
+      "image": "images/home/hero-equipment/archer-puppet/icon.png"
+    },
+    "3": {
+      "name": "Invisibility Vial",
+      "image": "images/home/hero-equipment/invisibility-vial/icon.png"
+    },
+    "4": {
+      "name": "Eternal Tome",
+      "image": "images/home/hero-equipment/eternal-tome/icon.png"
+    },
+    "5": {
+      "name": "Life Gem",
+      "image": "images/home/hero-equipment/life-gem/icon.png"
+    },
+    "6": {
+      "name": "Seeking Shield",
+      "image": "images/home/hero-equipment/seeking-shield/icon.png"
+    },
+    "7": {
+      "name": "Royal Gem",
+      "image": "images/home/hero-equipment/royal-gem/icon.png"
+    },
+    "8": {
+      "name": "Earthquake Boots",
+      "image": "images/home/hero-equipment/earthquake-boots/icon.png"
+    },
+    "9": {
+      "name": "Hog Rider Puppet",
+      "image": "images/home/hero-equipment/hog-rider-puppet/icon.png"
+    },
+    "10": {
+      "name": "Giant Gauntlet",
+      "image": "images/home/hero-equipment/giant-gauntlet/icon.png"
+    },
+    "11": {
+      "name": "Vampstache",
+      "image": "images/home/hero-equipment/vampstache/icon.png"
+    },
+    "12": {
+      "name": "Haste Vial",
+      "image": "images/home/hero-equipment/haste-vial/icon.png"
+    },
+    "13": {
+      "name": "Rocket Spear",
+      "image": "images/home/hero-equipment/rocket-spear/icon.png"
+    },
+    "14": {
+      "name": "Spiky Ball",
+      "image": "images/home/hero-equipment/spiky-ball/icon.png"
+    },
+    "15": {
+      "name": "Frozen Arrow",
+      "image": "images/home/hero-equipment/frozen-arrow/icon.png"
+    },
+    "17": {
+      "name": "Giant Arrow",
+      "image": "images/home/hero-equipment/giant-arrow/icon.png"
+    },
+    "19": {
+      "name": "Heroic Torch",
+      "image": "images/home/hero-equipment/heroic-torch/icon.png"
+    },
+    "20": {
+      "name": "Healer Puppet",
+      "image": "images/home/hero-equipment/healer-puppet/icon.png"
+    },
+    "22": {
+      "name": "Fireball",
+      "image": "images/home/hero-equipment/fireball/icon.png"
+    },
+    "24": {
+      "name": "Rage Gem",
+      "image": "images/home/hero-equipment/rage-gem/icon.png"
+    },
+    "32": {
+      "name": "Snake Bracelet",
+      "image": "images/home/hero-equipment/snake-bracelet/icon.png"
+    },
+    "34": {
+      "name": "Healing Tome",
+      "image": "images/home/hero-equipment/healing-tome/icon.png"
+    },
+    "35": {
+      "name": "Dark Crown",
+      "image": "images/home/hero-equipment/dark-crown/icon.png"
+    },
+    "39": {
+      "name": "Magic Mirror",
+      "image": "images/home/hero-equipment/magic-mirror/icon.png"
+    },
+    "40": {
+      "name": "Electro Boots",
+      "image": "images/home/hero-equipment/electro-boots/icon.png"
+    },
+    "41": {
+      "name": "Lavaloon Puppet",
+      "image": "images/home/hero-equipment/lavaloon-puppet/icon.png"
+    },
+    "42": {
+      "name": "Henchmen Puppet",
+      "image": "images/home/hero-equipment/henchmen-puppet/icon.png"
+    },
+    "43": {
+      "name": "Dark Orb",
+      "image": "images/home/hero-equipment/dark-orb/icon.png"
+    },
+    "44": {
+      "name": "Metal Pants",
+      "image": "images/home/hero-equipment/metal-pants/icon.png"
+    },
+    "47": {
+      "name": "Noble Iron",
+      "image": "images/home/hero-equipment/noble-iron/icon.png"
+    },
+    "48": {
+      "name": "Action Figure",
+      "image": "images/home/hero-equipment/action-figure/icon.png"
+    },
+    "49": {
+      "name": "Meteor Staff",
+      "image": "images/home/hero-equipment/meteor-staff/icon.png"
+    },
+    "50": {
+      "name": "Frost Flake",
+      "image": "images/home/hero-equipment/frost-flake/icon.png"
+    },
+    "51": {
+      "name": "Stick Horse",
+      "image": "images/home/hero-equipment/stick-horse/icon.png"
+    },
+    "52": {
+      "name": "Fire Heart",
+      "image": "images/home/hero-equipment/fire-heart/icon.png"
+    },
+    "53": {
+      "name": "Rocket Backpack",
+      "image": "images/home/hero-equipment/rocket-backpack/icon.png"
+    },
+    "56": {
+      "name": "Stun Blaster",
+      "image": "images/home/hero-equipment/stun-blaster/icon.png"
+    },
+    "57": {
+      "name": "Flame Blower",
+      "image": "images/home/hero-equipment/flame-blower/icon.png"
+    }
+  }
+}

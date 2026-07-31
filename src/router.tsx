@@ -6,6 +6,7 @@ import {
 } from "@tanstack/react-router";
 import { useAppStore } from "@/store/useAppStore";
 import { RootLayout } from "@/components/layout/RootLayout";
+import { RouteError, RouteNotFound } from "@/components/layout/RouteStates";
 import { SetupPage } from "@/pages/SetupPage";
 import { DashboardPage } from "@/pages/DashboardPage";
 import { RosterPage } from "@/pages/RosterPage";
@@ -69,6 +70,8 @@ export const router = createRouter({
   routeTree,
   defaultPreload: "intent",
   defaultPreloadStaleTime: 0,
+  defaultErrorComponent: RouteError,
+  defaultNotFoundComponent: RouteNotFound,
 });
 
 declare module "@tanstack/react-router" {
