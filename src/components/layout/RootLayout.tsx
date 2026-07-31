@@ -1,9 +1,9 @@
 import { Link, Outlet, useNavigate } from "@tanstack/react-router";
 import {
   ArrowLeftRight,
+  BadgeCheck,
   Crosshair,
   Gauge,
-  LogOut,
   RefreshCw,
   Settings2,
   Shield,
@@ -11,8 +11,12 @@ import {
   WifiOff,
 } from "lucide-react";
 import type { ComponentType } from "react";
+import { Authenticated, Unauthenticated } from "convex/react";
+import { GoogleButton } from "@/components/auth/GoogleButton";
+import { AccountMenu } from "@/components/auth/AccountMenu";
 import { useAppStore } from "@/store/useAppStore";
 import { useSync } from "@/hooks/useSync";
+import { useAccounts, useEnsureUser } from "@/hooks/useAccounts";
 import { useBackendOnline } from "@/hooks/useBackendStatus";
 import { relativeTime, cn } from "@/lib/utils";
 
@@ -59,29 +63,27 @@ function NavItem({
 }
 
 export function RootLayout() {
-  const playerTag = useAppStore((s) => s.playerTag);
-  const lastSyncAt = useAppStore((s) => s.lastSyncAt);
-  const reset = useAppStore((s) => s.reset);
-  const accounts = useAppStore((s) => s.accounts);
-  const switchAccount = useAppStore((s) => s.switchAccount);
-  const { sync, syncing, syncStatus } = useSync();
-  const online = useBackendOnline();
+  useEnsureUser();
   const navigate = useNavigate();
+  const lastSyncAt = useAppStore((s) => s.lastSyncAt);
+  const setActiveTag = useAppStore((s) => s.setActiveTag);
+  const { accounts, active, playerTag } = useAccounts();
+  const { sync, syncing, syncStatus } = useSync(playerTag);
+  const online = useBackendOnline();
 
-  const forget = async () => {
-    reset();
-    if (!useAppStore.getState().playerTag) await navigate({ to: "/" });
+  const showNav = Boolean(active);
+  const others = accounts.filter((a) => a.playerTag !== playerTag);
+
+  const switchTo = async (tag: string) => {
+    setActiveTag(tag);
+    await navigate({ to: "/overview" });
   };
-
-  const showNav = Boolean(playerTag);
-  const current = accounts.find((a) => a.tag === playerTag);
-  const others = accounts.filter((a) => a.tag !== playerTag);
 
   const syncControl = (
     <button
       type="button"
       onClick={sync}
-      disabled={syncing}
+      disabled={syncing || !playerTag}
       className="text-muted-foreground hover:text-foreground inline-flex items-center gap-2 text-xs font-medium transition-colors disabled:opacity-60"
     >
       <RefreshCw className={cn("h-3.5 w-3.5", syncing && "animate-spin")} />
@@ -107,14 +109,15 @@ export function RootLayout() {
           </nav>
 
           <div className="border-hairline mt-auto flex flex-col gap-2 border-t pt-4">
-            <p className="truncate text-sm font-semibold">
-              {current?.name ?? `#${playerTag}`}
+            <p className="flex items-center gap-1.5 truncate text-sm font-semibold">
+              {active?.name}
+              {active?.verifiedAt ? (
+                <BadgeCheck className="text-success h-3.5 w-3.5 shrink-0" />
+              ) : null}
             </p>
-            {current ? (
-              <p className="text-muted-foreground tnum -mt-1.5 truncate text-xs">
-                #{playerTag}
-              </p>
-            ) : null}
+            <p className="text-muted-foreground tnum -mt-1.5 truncate text-xs">
+              #{playerTag}
+            </p>
 
             {others.length ? (
               <div className="flex flex-col gap-1 py-1">
@@ -123,9 +126,9 @@ export function RootLayout() {
                 </span>
                 {others.map((account) => (
                   <button
-                    key={account.tag}
+                    key={account.playerTag}
                     type="button"
-                    onClick={() => switchAccount(account.tag)}
+                    onClick={() => switchTo(account.playerTag)}
                     className="text-muted-foreground hover:text-foreground flex items-center gap-2 truncate text-xs transition-colors"
                   >
                     <ArrowLeftRight className="h-3 w-3 shrink-0" />
@@ -134,6 +137,7 @@ export function RootLayout() {
                 ))}
               </div>
             ) : null}
+
             <div className="flex items-center gap-2">
               <span
                 className={cn(
@@ -152,14 +156,10 @@ export function RootLayout() {
               </span>
             </div>
             {syncControl}
-            <button
-              type="button"
-              onClick={forget}
-              className="text-muted-foreground hover:text-destructive mt-1 inline-flex items-center gap-2 text-xs transition-colors"
-            >
-              <LogOut className="h-3.5 w-3.5" />
-              Forget this account
-            </button>
+
+            <div className="border-hairline mt-2 border-t pt-3">
+              <AccountMenu />
+            </div>
           </div>
         </aside>
       )}
@@ -176,27 +176,33 @@ export function RootLayout() {
           </div>
         )}
 
-        {showNav && (
-          <header className="border-hairline bg-background/80 sticky top-0 z-30 flex items-center justify-between gap-4 border-b px-5 py-3 backdrop-blur md:hidden">
-            <Link
-              to="/overview"
-              className="flex items-center gap-2 font-semibold"
-            >
-              <Shield className="text-primary h-4.5 w-4.5" />
-              Clashboard
-              <span className="text-muted-foreground tnum text-xs font-normal">
+        <header className="border-hairline bg-background/80 sticky top-0 z-30 flex items-center justify-between gap-4 border-b px-5 py-3 backdrop-blur md:px-10">
+          <Link to="/" className="flex items-center gap-2 font-semibold">
+            <Shield className="text-primary h-4.5 w-4.5" />
+            Clashboard
+            {playerTag ? (
+              <span className="text-muted-foreground tnum text-xs font-normal md:hidden">
                 #{playerTag}
               </span>
-            </Link>
-            {syncControl}
-          </header>
-        )}
+            ) : null}
+          </Link>
+          <div className="flex items-center gap-4">
+            <Authenticated>
+              <span className="md:hidden">{syncControl}</span>
+              <span className="hidden max-w-56 md:block">
+                <AccountMenu />
+              </span>
+            </Authenticated>
+            <Unauthenticated>
+              <GoogleButton label="Sign in with Google" size="sm" />
+            </Unauthenticated>
+          </div>
+        </header>
 
         <main
           className={cn(
             "mx-auto w-full flex-1 px-5 py-8 md:px-10 md:py-10",
-            showNav ? "max-w-5xl" : "max-w-6xl",
-            showNav && "pb-24 md:pb-10",
+            showNav ? "max-w-5xl pb-24 md:pb-10" : "max-w-6xl",
           )}
         >
           <Outlet />

@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { action } from "../_generated/server";
+import { internalAction } from "../_generated/server";
 import { encodePlayerTag } from "../lib/constants";
 import { cocRequest } from "./request";
 
@@ -9,7 +9,7 @@ export interface VerifyTokenResponse {
   status: string;
 }
 
-export const verifyPlayerToken = action({
+export const verifyPlayerToken = internalAction({
   args: {
     playerTag: v.string(),
     token: v.string(),

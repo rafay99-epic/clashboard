@@ -4,6 +4,7 @@ import { action, internalMutation } from "../_generated/server";
 import { api, internal } from "../_generated/api";
 import type { CocBattleLog, SyncResult } from "../lib/types";
 import { normalizePlayerTag } from "../lib/constants";
+import { NOT_LINKED, requireClerkId } from "../lib/auth";
 
 interface SyncCtx {
   runAction: (
@@ -21,7 +22,7 @@ async function runBattleLogPipeline(
   playerTag: string,
 ): Promise<SyncResult> {
   try {
-    const raw = await ctx.runAction(api.coc.battlelog.fetchBattleLog, {
+    const raw = await ctx.runAction(internal.coc.battlelog.fetchBattleLog, {
       playerTag,
     });
     const log = raw as CocBattleLog;
@@ -43,6 +44,11 @@ export const syncBattleLog = action({
     playerTag: v.string(),
   },
   handler: async (ctx, args): Promise<SyncResult> => {
+    await requireClerkId(ctx);
+    const linked: boolean = await ctx.runQuery(api.accounts.isLinked, {
+      playerTag: args.playerTag,
+    });
+    if (!linked) return { ok: false, error: NOT_LINKED };
     return runBattleLogPipeline(ctx, args.playerTag);
   },
 });

@@ -1,13 +1,9 @@
 import { v } from "convex/values";
-import {
-  action,
-  internalAction,
-  internalMutation,
-  mutation,
-} from "../_generated/server";
+import { action, internalAction, internalMutation } from "../_generated/server";
 import { api, internal } from "../_generated/api";
 import type { CocPlayer, SyncCtx, SyncResult } from "../lib/types";
 import { normalizePlayerTag } from "../lib/constants";
+import { NOT_LINKED, requireClerkId } from "../lib/auth";
 import { playerValidator } from "../schema";
 import { normalizePlayer } from "./normalize";
 
@@ -16,7 +12,9 @@ async function runSyncPipeline(
   playerTag: string,
 ): Promise<SyncResult> {
   try {
-    const raw = await ctx.runAction(api.coc.fetch.fetchPlayer, { playerTag });
+    const raw = await ctx.runAction(internal.coc.fetch.fetchPlayer, {
+      playerTag,
+    });
     const player = raw as CocPlayer;
 
     const normalized = normalizePlayer(player, playerTag);
@@ -41,7 +39,15 @@ export const syncPlayer = action({
     playerTag: v.string(),
   },
   handler: async (ctx, args): Promise<SyncResult> => {
-    return runSyncPipeline(ctx, args.playerTag);
+    await requireClerkId(ctx);
+    const result = await runSyncPipeline(ctx, args.playerTag);
+    if (result.ok) {
+      await ctx.runMutation(api.accounts.link, {
+        playerTag: args.playerTag,
+        name: result.name,
+      });
+    }
+    return result;
   },
 });
 
@@ -50,6 +56,11 @@ export const requestRefresh = action({
     playerTag: v.string(),
   },
   handler: async (ctx, args): Promise<SyncResult> => {
+    await requireClerkId(ctx);
+    const linked: boolean = await ctx.runQuery(api.accounts.isLinked, {
+      playerTag: args.playerTag,
+    });
+    if (!linked) return { ok: false, error: NOT_LINKED };
     return runSyncPipeline(ctx, args.playerTag);
   },
 });
@@ -127,7 +138,7 @@ export const recordError = internalMutation({
   },
 });
 
-export const reportError = mutation({
+export const reportError = internalMutation({
   args: {
     playerTag: v.string(),
     error: v.string(),
@@ -137,7 +148,7 @@ export const reportError = mutation({
   },
 });
 
-export const seedTestPlayer = mutation({
+export const seedTestPlayer = internalMutation({
   args: {
     playerTag: v.optional(v.string()),
     name: v.optional(v.string()),
@@ -203,7 +214,7 @@ export const seedTestPlayer = mutation({
   },
 });
 
-export const clearTestData = mutation({
+export const clearTestData = internalMutation({
   args: {},
   handler: async (ctx) => {
     const players = await ctx.db.query("players").collect();

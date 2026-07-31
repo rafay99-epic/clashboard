@@ -15,7 +15,9 @@ import {
 } from "@/components/ui/tooltip";
 import { usePlayerData } from "@/hooks/usePlayerData";
 import { useSync } from "@/hooks/useSync";
-import { useAppStore, type BaseTab } from "@/store/useAppStore";
+import { useAccounts } from "@/hooks/useAccounts";
+import { useAppStore } from "@/store/useAppStore";
+import type { BaseTab } from "@/types";
 import {
   buildRoster,
   summarize,
@@ -147,11 +149,11 @@ function RosterSkeleton() {
 }
 
 export function RosterPage() {
-  const playerTag = useAppStore((s) => s.playerTag);
+  const { playerTag } = useAccounts();
   const activeBase = useAppStore((s) => s.activeBase);
   const setActiveBase = useAppStore((s) => s.setActiveBase);
   const { player, roster, loading } = usePlayerData(playerTag);
-  const { sync, syncing, lastError } = useSync();
+  const { sync, syncing, lastError } = useSync(playerTag);
 
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");

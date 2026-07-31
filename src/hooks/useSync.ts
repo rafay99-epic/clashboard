@@ -3,9 +3,9 @@ import { useAction } from "convex/react";
 import { api } from "convex/_generated/api";
 import { useAppStore } from "@/store/useAppStore";
 import { friendlyError } from "@/lib/errors";
+import type { SyncResult } from "@/types";
 
-export function useSync() {
-  const playerTag = useAppStore((s) => s.playerTag);
+export function useSync(playerTag: string | null) {
   const syncStatus = useAppStore((s) => s.syncStatus);
   const lastError = useAppStore((s) => s.lastError);
   const setSyncStatus = useAppStore((s) => s.setSyncStatus);
@@ -21,7 +21,7 @@ export function useSync() {
     setSyncing(true);
     setSyncStatus("syncing");
     try {
-      const [player, battles] = await Promise.all([
+      const [player, battles]: [SyncResult, SyncResult] = await Promise.all([
         requestRefresh({ playerTag }),
         syncBattleLog({ playerTag }),
       ]);

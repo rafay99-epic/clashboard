@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as accounts from "../accounts.js";
 import type * as battles_queries from "../battles/queries.js";
 import type * as battles_sync from "../battles/sync.js";
 import type * as coc_battlelog from "../coc/battlelog.js";
@@ -15,6 +16,7 @@ import type * as coc_fetch from "../coc/fetch.js";
 import type * as coc_request from "../coc/request.js";
 import type * as coc_verify from "../coc/verify.js";
 import type * as crons from "../crons.js";
+import type * as lib_auth from "../lib/auth.js";
 import type * as lib_constants from "../lib/constants.js";
 import type * as lib_env from "../lib/env.js";
 import type * as lib_rateLimiter from "../lib/rateLimiter.js";
@@ -27,6 +29,7 @@ import type * as roster_queries from "../roster/queries.js";
 import type * as roster_seed from "../roster/seed.js";
 import type * as sync_cron from "../sync/cron.js";
 import type * as sync_workflows from "../sync/workflows.js";
+import type * as users from "../users.js";
 
 import type {
   ApiFromModules,
@@ -35,6 +38,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  accounts: typeof accounts;
   "battles/queries": typeof battles_queries;
   "battles/sync": typeof battles_sync;
   "coc/battlelog": typeof coc_battlelog;
@@ -42,6 +46,7 @@ declare const fullApi: ApiFromModules<{
   "coc/request": typeof coc_request;
   "coc/verify": typeof coc_verify;
   crons: typeof crons;
+  "lib/auth": typeof lib_auth;
   "lib/constants": typeof lib_constants;
   "lib/env": typeof lib_env;
   "lib/rateLimiter": typeof lib_rateLimiter;
@@ -54,6 +59,7 @@ declare const fullApi: ApiFromModules<{
   "roster/seed": typeof roster_seed;
   "sync/cron": typeof sync_cron;
   "sync/workflows": typeof sync_workflows;
+  users: typeof users;
 }>;
 
 /**

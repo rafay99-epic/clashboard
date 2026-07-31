@@ -115,6 +115,24 @@ export const playerValidator = v.object({
 });
 
 export default defineSchema({
+  users: defineTable({
+    clerkId: v.string(),
+    name: v.optional(v.string()),
+    email: v.optional(v.string()),
+    createdAt: v.number(),
+  }).index("by_clerkId", ["clerkId"]),
+
+  accounts: defineTable({
+    userId: v.id("users"),
+    playerTag: v.string(),
+    name: v.string(),
+    verifiedAt: v.optional(v.number()),
+    createdAt: v.number(),
+  })
+    .index("by_userId", ["userId"])
+    .index("by_userId_playerTag", ["userId", "playerTag"])
+    .index("by_playerTag", ["playerTag"]),
+
   players: defineTable(playerValidator).index("by_playerTag", ["playerTag"]),
 
   snapshots: defineTable({

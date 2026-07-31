@@ -73,7 +73,10 @@ export async function cocRequest<T>(
       );
     }
     if (res.status === 404) {
-      throw new CocApiError(404, "Resource not found.");
+      throw new CocApiError(
+        404,
+        `Clash of Clans has no record of ${decodeURIComponent(path.split("/")[2] ?? "that tag")}. Check the tag in game under Settings.`,
+      );
     }
     if (res.status >= 500) {
       lastError = new CocApiError(res.status, "CoC API server error");

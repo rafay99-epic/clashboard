@@ -1,66 +1,41 @@
 import { expect, test, beforeEach } from "bun:test";
 import { useAppStore } from "@/store/useAppStore";
 
-const reset = () =>
-  useAppStore.setState({ playerTag: null, accounts: [], lastError: null });
-
-beforeEach(reset);
-
-test("adding accounts switches to the new one and keeps the old", () => {
-  const s = useAppStore.getState();
-  s.addAccount("#20Q09Y0JU", "Rafay99");
-  s.addAccount("2PP", "Alt");
-
-  const { accounts, playerTag } = useAppStore.getState();
-  expect(accounts.map((a) => a.tag)).toEqual(["20Q09Y0JU", "2PP"]);
-  expect(playerTag).toBe("2PP");
-});
-
-test("re-adding a tag updates the name instead of duplicating", () => {
-  const s = useAppStore.getState();
-  s.addAccount("2PP", "Old");
-  s.addAccount("#2pp", "New");
-  expect(useAppStore.getState().accounts).toEqual([
-    { tag: "2PP", name: "New" },
-  ]);
-});
-
-test("switching clears stale sync state", () => {
-  const s = useAppStore.getState();
-  s.addAccount("2PP", "A");
-  s.addAccount("2QQ", "B");
-  useAppStore.setState({ lastError: "boom", syncStatus: "error" });
-
-  useAppStore.getState().switchAccount("2PP");
-  const after = useAppStore.getState();
-  expect(after.playerTag).toBe("2PP");
-  expect(after.lastError).toBeNull();
-  expect(after.syncStatus).toBe("idle");
-});
-
-test("verification sticks to the account and survives a re-add", () => {
-  const s = useAppStore.getState();
-  s.addAccount("2PP", "A");
-  s.markVerified("#2pp", 1234);
-  expect(useAppStore.getState().accounts[0].verifiedAt).toBe(1234);
-
-  useAppStore.getState().addAccount("2PP", "A renamed");
-  expect(useAppStore.getState().accounts[0]).toEqual({
-    tag: "2PP",
-    name: "A renamed",
-    verifiedAt: 1234,
+beforeEach(() => {
+  useAppStore.setState({
+    activeTag: null,
+    activeBase: "home",
+    syncStatus: "idle",
+    lastSyncAt: null,
+    lastError: null,
   });
 });
 
-test("removing the active account falls back to another", () => {
-  const s = useAppStore.getState();
-  s.addAccount("2PP", "A");
-  s.addAccount("2QQ", "B");
+test("setting the active tag normalises it and clears stale sync state", () => {
+  useAppStore.setState({ syncStatus: "error", lastError: "boom" });
+  useAppStore.getState().setActiveTag("#20q09y0ju");
 
-  useAppStore.getState().removeAccount("2QQ");
-  expect(useAppStore.getState().playerTag).toBe("2PP");
+  const state = useAppStore.getState();
+  expect(state.activeTag).toBe("20Q09Y0JU");
+  expect(state.syncStatus).toBe("idle");
+  expect(state.lastError).toBeNull();
+});
 
-  useAppStore.getState().removeAccount("2PP");
-  expect(useAppStore.getState().playerTag).toBeNull();
-  expect(useAppStore.getState().accounts).toEqual([]);
+test("clearing the active tag leaves no selection behind", () => {
+  useAppStore.getState().setActiveTag("2PP");
+  useAppStore.getState().setActiveTag(null);
+  expect(useAppStore.getState().activeTag).toBeNull();
+});
+
+test("resetSession drops the session but keeps the chosen base", () => {
+  useAppStore.getState().setActiveBase("builder");
+  useAppStore.getState().setActiveTag("2PP");
+  useAppStore.setState({ lastSyncAt: 5, lastError: "x", syncStatus: "error" });
+
+  useAppStore.getState().resetSession();
+  const state = useAppStore.getState();
+  expect(state.activeTag).toBeNull();
+  expect(state.lastSyncAt).toBeNull();
+  expect(state.lastError).toBeNull();
+  expect(state.activeBase).toBe("builder");
 });

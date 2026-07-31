@@ -7,7 +7,10 @@ import {
   UsersRound,
 } from "lucide-react";
 import type { ComponentType } from "react";
-import { TagForm } from "@/components/TagForm";
+import { Authenticated, Unauthenticated } from "convex/react";
+import { GoogleButton } from "@/components/auth/GoogleButton";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 
 const FEATURES: {
   icon: ComponentType<{ className?: string }>;
@@ -56,17 +59,28 @@ export function LandingPage() {
           </h1>
           <p className="text-muted-foreground max-w-xl text-base leading-relaxed">
             A progress tracker for Clash of Clans that answers one question
-            honestly: what is actually left to upgrade. Paste your player tag —
-            no login, no API key, nothing to install.
+            honestly: what is actually left to upgrade. Sign in, paste your
+            player tag, and every village you play stays in one place.
           </p>
 
-          <div className="border-hairline max-w-md border-t pt-6">
-            <TagForm
-              label="Player tag"
-              submitLabel="Start tracking"
-              size="lg"
-              redirectTo="/overview"
-            />
+          <div className="border-hairline flex max-w-md flex-col gap-4 border-t pt-6">
+            <Unauthenticated>
+              <GoogleButton size="lg" />
+              <p className="text-muted-foreground text-xs">
+                Sign in with Google, then add your player tag. Tracked villages
+                stay private to your account.
+              </p>
+            </Unauthenticated>
+            <Authenticated>
+              <div className="flex flex-wrap items-center gap-3">
+                <Button size="lg" asChild>
+                  <Link to="/overview">Open your dashboard</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/accounts">Add a player tag</Link>
+                </Button>
+              </div>
+            </Authenticated>
           </div>
         </div>
 

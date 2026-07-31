@@ -2,21 +2,25 @@ import {
   createRootRoute,
   createRoute,
   createRouter,
-  redirect,
 } from "@tanstack/react-router";
-import { useAppStore } from "@/store/useAppStore";
+import type { ReactNode } from "react";
 import { RootLayout } from "@/components/layout/RootLayout";
 import { RouteError, RouteNotFound } from "@/components/layout/RouteStates";
+import { RequireAuth } from "@/components/auth/RequireAuth";
+import { RequireAccount } from "@/components/auth/RequireAccount";
 import { LandingPage } from "@/pages/LandingPage";
+import { SsoCallbackPage } from "@/pages/SsoCallbackPage";
 import { AccountsPage } from "@/pages/AccountsPage";
 import { DashboardPage } from "@/pages/DashboardPage";
 import { RosterPage } from "@/pages/RosterPage";
 import { BattlesPage } from "@/pages/BattlesPage";
 
-function requireTag() {
-  if (!useAppStore.getState().playerTag) {
-    throw redirect({ to: "/" });
-  }
+function guarded(children: ReactNode, requireAccount = true) {
+  return (
+    <RequireAuth>
+      {requireAccount ? <RequireAccount>{children}</RequireAccount> : children}
+    </RequireAuth>
+  );
 }
 
 const rootRoute = createRootRoute({
@@ -26,45 +30,43 @@ const rootRoute = createRootRoute({
 const landingRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
-  beforeLoad: () => {
-    if (useAppStore.getState().playerTag) {
-      throw redirect({ to: "/overview" });
-    }
-  },
   component: LandingPage,
+});
+
+const ssoCallbackRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/sso-callback",
+  component: SsoCallbackPage,
 });
 
 const overviewRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/overview",
-  beforeLoad: requireTag,
-  component: DashboardPage,
+  component: () => guarded(<DashboardPage />),
 });
 
 const rosterRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/roster",
   validateSearch: () => ({}),
-  beforeLoad: requireTag,
-  component: RosterPage,
+  component: () => guarded(<RosterPage />),
 });
 
 const battlesRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/battles",
-  beforeLoad: requireTag,
-  component: BattlesPage,
+  component: () => guarded(<BattlesPage />),
 });
 
 const accountsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/accounts",
-  beforeLoad: requireTag,
-  component: AccountsPage,
+  component: () => guarded(<AccountsPage />, false),
 });
 
 const routeTree = rootRoute.addChildren([
   landingRoute,
+  ssoCallbackRoute,
   overviewRoute,
   rosterRoute,
   battlesRoute,
