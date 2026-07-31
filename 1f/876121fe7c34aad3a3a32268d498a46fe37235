@@ -1,0 +1,41 @@
+convex/players/verify.ts
+  s_bcf16b732757f6::t_5cbe97bcba0795 28-34
+convex/coc/request.ts
+  s_bcf16b732757f6::t_9586746049dd0b 76-79
+convex/players/sync.ts
+  s_bcf16b732757f6::t_5cbe97bcba0795 15-17
+convex/coc/verify.ts
+  s_bcf16b732757f6::t_55a38e13678708 2,12
+convex/coc/fetch.ts
+  s_bcf16b732757f6::t_55a38e13678708 2,7
+convex/battles/sync.ts
+  s_bcf16b732757f6::t_55a38e13678708 25
+src/lib/errors.ts
+  s_bcf16b732757f6::t_9586746049dd0b 20
+src/lib/clerkAppearance.ts
+  s_bcf16b732757f6::t_5cbe97bcba0795 4,10,20-74
+  s_bcf16b732757f6::t_9586746049dd0b 7,13-14,17,75-78
+convex/coc/battlelog.ts
+  s_bcf16b732757f6::t_55a38e13678708 2,7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "1f876121fe7c34aad3a3a32268d498a46fe37235",
+  "prompts": {},
+  "humans": {
+    "h_1e0ba4a9f2a4b4": {
+      "author": "Abdul Rafay <99marafay@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_bcf16b732757f6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c6b675e2-fdfd-40e1-bd38-b15afa59f603",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Abdul Rafay <99marafay@gmail.com>"
+    }
+  }
+}
