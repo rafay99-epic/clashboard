@@ -1,0 +1,46 @@
+package.json
+  s_bcf16b732757f6::t_9de34efedcdae0 2
+src/pages/LandingPage.tsx
+  s_bcf16b732757f6::t_9de34efedcdae0 51
+src/components/layout/RootLayout.tsx
+  s_bcf16b732757f6::t_9de34efedcdae0 99,186
+.github/workflows/ci.yml
+  s_bcf16b732757f6::t_9eb535ec2fdc5f 27-29
+  s_bcf16b732757f6::t_ef4a12127ef80a 1-26,30-50
+index.html
+  s_bcf16b732757f6::t_9de34efedcdae0 7
+README.md
+  s_bcf16b732757f6::t_2e0f054c4a9366 1-109
+bun.lock
+  s_bcf16b732757f6::t_94d952a58af984 1-1147
+convex/_generated/api.d.ts
+  s_bcf16b732757f6::t_8f16b76531d009 1-88
+convex/_generated/ai/ai-files.state.json
+  s_bcf16b732757f6::t_dda5832cafddb8 1-6
+convex/_generated/ai/guidelines.md
+  s_bcf16b732757f6::t_6ac6127872c81b 1-458
+convex/_generated/api.js
+  s_bcf16b732757f6::t_fc9b5c6a915dbf 1-23
+convex/_generated/dataModel.d.ts
+  s_bcf16b732757f6::t_29f796bc153103 1-60
+convex/_generated/server.d.ts
+  s_bcf16b732757f6::t_3a731f2c8f8353 1-143
+convex/_generated/server.js
+  s_bcf16b732757f6::t_ed03cb357d7e6c 1-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "91abb960bbfa8a66b754621255702402788aa2b5",
+  "prompts": {},
+  "sessions": {
+    "s_bcf16b732757f6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c6b675e2-fdfd-40e1-bd38-b15afa59f603",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Abdul Rafay <99marafay@gmail.com>"
+    }
+  }
+}
