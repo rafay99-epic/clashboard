@@ -1,0 +1,41 @@
+src/router.tsx
+  s_bcf16b732757f6::t_285dbdb4696888 10-11,16-21,26,30-31,34,37,39-41,48,55,59-65,67-68,71
+src/hooks/usePlayerData.ts
+  s_bcf16b732757f6::t_bdf78d9c956367 6-15,50-55,60
+  s_bcf16b732757f6::t_58f32ccdf12586 29-30
+src/pages/DashboardPage.tsx
+  s_bcf16b732757f6::t_e91ccbd71a6045 58-59
+src/pages/RosterPage.tsx
+  s_bcf16b732757f6::t_e91ccbd71a6045 153
+src/pages/BattlesPage.tsx
+  s_bcf16b732757f6::t_e91ccbd71a6045 400
+src/pages/LandingPage.tsx
+  s_bcf16b732757f6::t_1f15ba76e4eb19 1-150
+src/components/layout/RootLayout.tsx
+  s_bcf16b732757f6::t_85ee6d0c8fdc90 1,24,27,69-74,96,157,198
+  s_bcf16b732757f6::t_58f32ccdf12586 181-184
+src/components/layout/RouteStates.tsx
+  s_bcf16b732757f6::t_58f32ccdf12586 58
+src/pages/AccountsPage.tsx
+  s_bcf16b732757f6::t_f456f0e1cf880b 13,28-34,131
+  s_bcf16b732757f6::t_08af4c1458b6ee 15,162
+  s_bcf16b732757f6::t_da4c660a170899 1-12,14,16-27,35-130,132-161,163-240
+src/components/TagForm.tsx
+  s_bcf16b732757f6::t_f555e9cb099310 1-150
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "b7162dbb21d4c9a773854210fc4c18356564174c",
+  "prompts": {},
+  "sessions": {
+    "s_bcf16b732757f6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c6b675e2-fdfd-40e1-bd38-b15afa59f603",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Abdul Rafay <99marafay@gmail.com>"
+    }
+  }
+}
