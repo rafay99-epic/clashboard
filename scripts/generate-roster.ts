@@ -163,3 +163,80 @@ for (const entry of unique) {
 
 console.log(`Wrote ${unique.length} roster entries to ${OUT_FILE}`);
 console.log(`Copied ${copied} images to public/images`);
+
+const ARMY_BUCKETS: { dir: string; prefix: string; base: number }[] = [
+  { dir: "troops", prefix: "u", base: 4_000_000 },
+  { dir: "siege-machines", prefix: "u", base: 4_000_000 },
+  { dir: "spells", prefix: "s", base: 26_000_000 },
+  { dir: "heroes", prefix: "h", base: 28_000_000 },
+  { dir: "pets", prefix: "p", base: 73_000_000 },
+  { dir: "hero-equipment", prefix: "e", base: 90_000_000 },
+];
+
+interface ArmyFile extends RosterFile {
+  dataId?: number;
+  housingSpace?: number;
+}
+
+type ArmyIndex = Record<
+  string,
+  Record<string, { name: string; image: string; housing?: number }>
+>;
+
+const armyIndex: ArmyIndex = { u: {}, s: {}, h: {}, p: {}, e: {} };
+const armyImages: string[] = [];
+
+for (const bucket of ARMY_BUCKETS) {
+  const dirPath = join(DATA_DIR, "home", bucket.dir);
+  let files: string[];
+  try {
+    files = readdirSync(dirPath);
+  } catch {
+    continue;
+  }
+  for (const file of files) {
+    if (!file.endsWith(".json")) continue;
+    let data: ArmyFile;
+    try {
+      data = JSON.parse(readFileSync(join(dirPath, file), "utf-8")) as ArmyFile;
+    } catch {
+      continue;
+    }
+    if (typeof data.dataId !== "number" || data.dataId < bucket.base) continue;
+    const levels = data.levels ?? [];
+    const image =
+      data.images?.icon ??
+      levels[levels.length - 1]?.images?.icon ??
+      levels[levels.length - 1]?.images?.normal ??
+      "";
+    if (!image) continue;
+    armyIndex[bucket.prefix][String(data.dataId % 1_000_000)] = {
+      name: data.name,
+      image,
+      ...(data.housingSpace ? { housing: data.housingSpace } : {}),
+    };
+    armyImages.push(image);
+  }
+}
+
+const ARMY_FILE = join(OUT_DIR, "army-index.json");
+writeFileSync(ARMY_FILE, JSON.stringify(armyIndex, null, 2) + "\n");
+
+let armyCopied = 0;
+for (const rel of armyImages) {
+  try {
+    const dest = join(__dirname, "../public", rel);
+    mkdirSync(dirname(dest), { recursive: true });
+    cpSync(join(__dirname, "../node_modules/clash-of-clans-data", rel), dest);
+    armyCopied++;
+  } catch (err) {
+    void err;
+  }
+}
+
+const armyCount = Object.values(armyIndex).reduce(
+  (acc, bucket) => acc + Object.keys(bucket).length,
+  0,
+);
+console.log(`Wrote ${armyCount} army entries to ${ARMY_FILE}`);
+console.log(`Copied ${armyCopied} army icons to public/images`);

@@ -81,6 +81,7 @@ export const upsertPlayer = internalMutation({
       playerTag,
       lastFetchedAt: now,
       lastSuccessfulAt: now,
+      lastError: undefined,
     };
 
     if (existing) {

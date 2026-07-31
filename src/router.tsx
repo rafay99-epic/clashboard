@@ -6,69 +6,77 @@ import {
 } from "@tanstack/react-router";
 import { useAppStore } from "@/store/useAppStore";
 import { RootLayout } from "@/components/layout/RootLayout";
-import { SetupPage } from "@/pages/SetupPage";
+import { RouteError, RouteNotFound } from "@/components/layout/RouteStates";
+import { LandingPage } from "@/pages/LandingPage";
+import { AccountsPage } from "@/pages/AccountsPage";
 import { DashboardPage } from "@/pages/DashboardPage";
 import { RosterPage } from "@/pages/RosterPage";
 import { BattlesPage } from "@/pages/BattlesPage";
+
+function requireTag() {
+  if (!useAppStore.getState().playerTag) {
+    throw redirect({ to: "/" });
+  }
+}
 
 const rootRoute = createRootRoute({
   component: RootLayout,
 });
 
-const indexRoute = createRoute({
+const landingRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
   beforeLoad: () => {
-    const { playerTag } = useAppStore.getState();
-    if (!playerTag) {
-      throw redirect({ to: "/setup" });
+    if (useAppStore.getState().playerTag) {
+      throw redirect({ to: "/overview" });
     }
   },
-  component: DashboardPage,
+  component: LandingPage,
 });
 
-const setupRoute = createRoute({
+const overviewRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/setup",
-  component: SetupPage,
+  path: "/overview",
+  beforeLoad: requireTag,
+  component: DashboardPage,
 });
 
 const rosterRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/roster",
   validateSearch: () => ({}),
-  beforeLoad: () => {
-    const { playerTag } = useAppStore.getState();
-    if (!playerTag) {
-      throw redirect({ to: "/setup" });
-    }
-  },
+  beforeLoad: requireTag,
   component: RosterPage,
 });
 
 const battlesRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/battles",
-  beforeLoad: () => {
-    const { playerTag } = useAppStore.getState();
-    if (!playerTag) {
-      throw redirect({ to: "/setup" });
-    }
-  },
+  beforeLoad: requireTag,
   component: BattlesPage,
 });
 
+const accountsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/accounts",
+  beforeLoad: requireTag,
+  component: AccountsPage,
+});
+
 const routeTree = rootRoute.addChildren([
-  indexRoute,
-  setupRoute,
+  landingRoute,
+  overviewRoute,
   rosterRoute,
   battlesRoute,
+  accountsRoute,
 ]);
 
 export const router = createRouter({
   routeTree,
   defaultPreload: "intent",
   defaultPreloadStaleTime: 0,
+  defaultErrorComponent: RouteError,
+  defaultNotFoundComponent: RouteNotFound,
 });
 
 declare module "@tanstack/react-router" {

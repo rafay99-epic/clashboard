@@ -3,12 +3,16 @@ import { api } from "convex/_generated/api";
 import type { PlayerData, RosterEntry } from "@/lib/roster";
 import { normalizeTag } from "@/lib/roster";
 
-export function usePlayerData(playerTag: string) {
-  const normalized = normalizeTag(playerTag);
-  const player = useConvexQuery(api.players.queries.getPlayer, {
-    playerTag: normalized,
-  });
-  const roster = useConvexQuery(api.roster.queries.getRoster, {});
+export function usePlayerData(playerTag: string | null) {
+  const normalized = playerTag ? normalizeTag(playerTag) : null;
+  const player = useConvexQuery(
+    api.players.queries.getPlayer,
+    normalized ? { playerTag: normalized } : "skip",
+  );
+  const roster = useConvexQuery(
+    api.roster.queries.getRoster,
+    normalized ? {} : "skip",
+  );
 
   const entries: RosterEntry[] = (roster ?? []).map((r) => ({
     base: r.base,
@@ -22,7 +26,8 @@ export function usePlayerData(playerTag: string) {
   return {
     player: (player as PlayerData | null) ?? null,
     roster: entries,
-    loading: player === undefined || roster === undefined,
+    loading:
+      Boolean(normalized) && (player === undefined || roster === undefined),
   };
 }
 
@@ -42,15 +47,16 @@ export interface BattleEntry {
   battleTimestamp: string;
 }
 
-export function useBattleLog(playerTag: string) {
-  const normalized = normalizeTag(playerTag);
-  const log = useConvexQuery(api.battles.queries.getBattleLog, {
-    playerTag: normalized,
-  });
+export function useBattleLog(playerTag: string | null) {
+  const normalized = playerTag ? normalizeTag(playerTag) : null;
+  const log = useConvexQuery(
+    api.battles.queries.getBattleLog,
+    normalized ? { playerTag: normalized } : "skip",
+  );
   const items: BattleEntry[] = (log?.items ?? []) as BattleEntry[];
   return {
     items,
     fetchedAt: log?.fetchedAt ?? null,
-    loading: log === undefined,
+    loading: Boolean(normalized) && log === undefined,
   };
 }
