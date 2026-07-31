@@ -1,0 +1,136 @@
+src/types/army.ts
+  s_bcf16b732757f6::t_d80add38ea675d 1-38
+src/store/useAppStore.ts
+  s_bcf16b732757f6::t_08894094b02a28 4,7,13,16,18,23-24,30,32-35,40-46,49-50,52
+src/pages/BattlesPage.tsx
+  s_bcf16b732757f6::t_4d7d08d8603734 16,412,414
+  s_bcf16b732757f6::t_e3a742090d6692 295-307
+src/pages/RosterPage.tsx
+  s_bcf16b732757f6::t_4d7d08d8603734 18-20,152,156
+src/components/auth/RequireAccount.tsx
+  s_bcf16b732757f6::t_8f27f30e9987b0 1-30
+src/pages/AccountsPage.tsx
+  s_bcf16b732757f6::t_19f6d23091dca1 2,16,18,21,24-28,31-37,41,44,46-47,51-58,65,68,74,99,113,126-128,140,148,150-151,160,167-171,176,188-191,202,234
+tests/store/useAppStore.test.ts
+  s_bcf16b732757f6::t_490832399987fa 4-11,14-16,18-21,24-27,30-40
+src/lib/roster.ts
+  s_bcf16b732757f6::t_b44e7ade000c9a 1-20
+src/lib/accounts.ts
+  s_bcf16b732757f6::t_8f27f30e9987b0 1-18
+package.json
+  s_bcf16b732757f6::t_7fd14ecc09b93b 22
+convex/roster/seed.ts
+  s_bcf16b732757f6::t_60332e4dbd7dc8 5
+  s_bcf16b732757f6::t_3b9cb107ae6557 1
+convex/users.ts
+  s_bcf16b732757f6::t_52917a6eb484e4 1-50
+src/pages/LandingPage.tsx
+  s_bcf16b732757f6::t_356448447cf9b1 10-13,62-63,66-92
+convex/lib/auth.ts
+  s_bcf16b732757f6::t_db71d70ccbd1c4 1-2,5-15,18-25,28-32,35-42,45-58
+  s_bcf16b732757f6::t_31d76d10ef7cad 3-4,16-17,26-27,33-34,43-44,59-67
+convex/players/queries.ts
+  s_bcf16b732757f6::t_60332e4dbd7dc8 4,9,23
+src/types/battle.ts
+  s_bcf16b732757f6::t_d80add38ea675d 1-26
+src/router.tsx
+  s_bcf16b732757f6::t_8f27f30e9987b0 6,9-10,17-22,38,45,51,57
+src/types/index.ts
+  s_bcf16b732757f6::t_d80add38ea675d 1-6
+convex/schema.ts
+  s_bcf16b732757f6::t_db71d70ccbd1c4 118-135
+src/components/layout/RootLayout.tsx
+  s_bcf16b732757f6::t_e3a742090d6692 204-207
+  s_bcf16b732757f6::t_56a9190c759674 165-167
+  s_bcf16b732757f6::t_904f1b2d8b86f5 4,14-16,19,66-67,69-71,74-75,77-80,86,112-119,129,131,140,159-164,168,185-190,193-203,208-216,221
+src/hooks/useSync.ts
+  s_bcf16b732757f6::t_9a217887c707d4 6,8,24
+src/types/player.ts
+  s_bcf16b732757f6::t_d80add38ea675d 1-54
+tests/lib/accounts.test.ts
+  s_bcf16b732757f6::t_490832399987fa 1-33
+src/components/TagForm.tsx
+  s_bcf16b732757f6::t_9a217887c707d4 12,29,54,62
+src/pages/DashboardPage.tsx
+  s_bcf16b732757f6::t_4d7d08d8603734 15,57,61
+convex/lib/types.ts
+  s_bcf16b732757f6::t_47ae91791613d8 101
+convex/_generated/api.d.ts
+  s_bcf16b732757f6::t_6c19c4be604264 11,19,32,41,49,62
+src/lib/clerkAppearance.ts
+  s_bcf16b732757f6::t_3f3843ffd52bc8 1,22
+  s_bcf16b732757f6::t_8837af88423c34 2-21
+src/components/auth/MissingClerkKey.tsx
+  s_bcf16b732757f6::t_56a9190c759674 23-24
+  s_bcf16b732757f6::t_3f3843ffd52bc8 1-22,25-28
+src/components/auth/RequireAuth.tsx
+  s_bcf16b732757f6::t_e3a742090d6692 19
+  s_bcf16b732757f6::t_21da2ae0fe1064 1-18,20-54
+src/lib/army.ts
+  s_bcf16b732757f6::t_56a9190c759674 2
+  s_bcf16b732757f6::t_b44e7ade000c9a 4,6-7,21
+src/types/roster.ts
+  s_bcf16b732757f6::t_d80add38ea675d 1-41
+convex/accounts.ts
+  s_bcf16b732757f6::t_56a9190c759674 98-100
+  s_bcf16b732757f6::t_52917a6eb484e4 1-88
+  s_bcf16b732757f6::t_67b391b010d199 89-97,101-105
+src/hooks/usePlayerData.ts
+  s_bcf16b732757f6::t_47ae91791613d8 4,34
+convex/battles/sync.ts
+  s_bcf16b732757f6::t_df38875810545a 47-51
+  s_bcf16b732757f6::t_f81df024769090 7
+README.md
+  s_bcf16b732757f6::t_eba7f84c6b1593 6-7,120
+  s_bcf16b732757f6::t_c5c7db0a4f59cc 32-73,129-130,132-134,137-142
+  s_bcf16b732757f6::t_b32bf5c99bf12f 74,81,121,143
+src/types/api.ts
+  s_bcf16b732757f6::t_d80add38ea675d 1-7
+tests/convex/auth.test.ts
+  s_bcf16b732757f6::t_490832399987fa 1-14
+src/vite-env.d.ts
+  s_bcf16b732757f6::t_8837af88423c34 5
+convex/battles/queries.ts
+  s_bcf16b732757f6::t_60332e4dbd7dc8 4,9
+src/hooks/useAccounts.ts
+  s_bcf16b732757f6::t_21da2ae0fe1064 1-6,8-29,31-46
+  s_bcf16b732757f6::t_8f27f30e9987b0 7,30
+src/main.tsx
+  s_bcf16b732757f6::t_56a9190c759674 28-31
+  s_bcf16b732757f6::t_8837af88423c34 4-5,8,12,15-27,32-42
+src/types/account.ts
+  s_bcf16b732757f6::t_d80add38ea675d 1-18
+convex/auth.config.ts
+  s_bcf16b732757f6::t_09246a1bbb8bff 3-4,6
+  s_bcf16b732757f6::t_31d76d10ef7cad 5,7
+  s_bcf16b732757f6::t_956c715b9d8b45 1-2
+convex/players/sync.ts
+  s_bcf16b732757f6::t_60332e4dbd7dc8 139,149,215
+  s_bcf16b732757f6::t_f81df024769090 6
+  s_bcf16b732757f6::t_56a9190c759674 2
+  s_bcf16b732757f6::t_df38875810545a 40-48,57-61
+convex/roster/queries.ts
+  s_bcf16b732757f6::t_60332e4dbd7dc8 3,24
+convex/players/verify.ts
+  s_bcf16b732757f6::t_f81df024769090 5,16-21,42-43
+  s_bcf16b732757f6::t_356448447cf9b1 7-8
+  s_bcf16b732757f6::t_2737d2f09d3fd0 44-46
+bun.lock
+  s_bcf16b732757f6::t_ade39fd5a1fe8b 8,90-93,606-607,690-691,732-733,904-905,916-917,1012-1013
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "bacdd0243c7656f7f188c5d2338bbc41e62f9906",
+  "prompts": {},
+  "sessions": {
+    "s_bcf16b732757f6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c6b675e2-fdfd-40e1-bd38-b15afa59f603",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Abdul Rafay <99marafay@gmail.com>"
+    }
+  }
+}
