@@ -96,7 +96,7 @@ export function RootLayout() {
           <Link to="/overview" className="flex items-center gap-2.5">
             <Shield className="text-primary h-5 w-5" />
             <span className="text-[15px] font-semibold tracking-tight">
-              Clash Tracker
+              Clashboard
             </span>
           </Link>
 
@@ -183,7 +183,7 @@ export function RootLayout() {
               className="flex items-center gap-2 font-semibold"
             >
               <Shield className="text-primary h-4.5 w-4.5" />
-              Clash Tracker
+              Clashboard
               <span className="text-muted-foreground tnum text-xs font-normal">
                 #{playerTag}
               </span>

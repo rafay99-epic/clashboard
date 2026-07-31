@@ -48,7 +48,7 @@ export function LandingPage() {
         <div className="flex flex-col gap-6">
           <span className="text-primary flex items-center gap-2 text-xs font-medium tracking-[0.2em] uppercase">
             <Shield className="h-4 w-4" />
-            Clash Tracker
+            Clashboard
           </span>
           <h1 className="text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
             Your village, measured against{" "}

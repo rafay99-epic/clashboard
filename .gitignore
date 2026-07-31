@@ -1,13 +1,11 @@
 node_modules
 dist
 .convex
-convex/_generated
 *.local
 .env
 .env.*
 !.env.example
 .DS_Store
-bun.lock
 .agents
 .claude
 .commandcode
