@@ -9,7 +9,6 @@ import { MissingClerkKey } from "@/components/auth/MissingClerkKey";
 import { convex } from "@/lib/convex";
 import { queryClient } from "@/lib/queryClient";
 import { router } from "@/router";
-import { clerkAppearance } from "@/lib/clerkAppearance";
 import "./index.css";
 
 const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -25,10 +24,7 @@ if (!publishableKey) {
 } else {
   root.render(
     <StrictMode>
-      <ClerkProvider
-        publishableKey={publishableKey}
-        appearance={clerkAppearance}
-      >
+      <ClerkProvider publishableKey={publishableKey}>
         <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
           <QueryClientProvider client={queryClient}>
             <TooltipProvider>

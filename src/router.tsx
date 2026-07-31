@@ -9,6 +9,7 @@ import { RouteError, RouteNotFound } from "@/components/layout/RouteStates";
 import { RequireAuth } from "@/components/auth/RequireAuth";
 import { RequireAccount } from "@/components/auth/RequireAccount";
 import { LandingPage } from "@/pages/LandingPage";
+import { SsoCallbackPage } from "@/pages/SsoCallbackPage";
 import { AccountsPage } from "@/pages/AccountsPage";
 import { DashboardPage } from "@/pages/DashboardPage";
 import { RosterPage } from "@/pages/RosterPage";
@@ -30,6 +31,12 @@ const landingRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
   component: LandingPage,
+});
+
+const ssoCallbackRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/sso-callback",
+  component: SsoCallbackPage,
 });
 
 const overviewRoute = createRoute({
@@ -59,6 +66,7 @@ const accountsRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([
   landingRoute,
+  ssoCallbackRoute,
   overviewRoute,
   rosterRoute,
   battlesRoute,

@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import type { ComponentType } from "react";
 import { Authenticated, Unauthenticated } from "convex/react";
-import { SignInButton, SignUpButton } from "@clerk/clerk-react";
+import { GoogleButton } from "@/components/auth/GoogleButton";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 
@@ -65,19 +65,10 @@ export function LandingPage() {
 
           <div className="border-hairline flex max-w-md flex-col gap-4 border-t pt-6">
             <Unauthenticated>
-              <div className="flex flex-wrap items-center gap-3">
-                <SignUpButton mode="modal">
-                  <Button size="lg">Create your account</Button>
-                </SignUpButton>
-                <SignInButton mode="modal">
-                  <Button size="lg" variant="outline">
-                    Sign in
-                  </Button>
-                </SignInButton>
-              </div>
+              <GoogleButton size="lg" />
               <p className="text-muted-foreground text-xs">
-                Sign in first, then add your player tag. Tracked villages stay
-                private to your account.
+                Sign in with Google, then add your player tag. Tracked villages
+                stay private to your account.
               </p>
             </Unauthenticated>
             <Authenticated>

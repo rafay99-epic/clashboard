@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import type { ComponentType } from "react";
 import { Authenticated, Unauthenticated } from "convex/react";
-import { SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
-import { Button } from "@/components/ui/button";
+import { GoogleButton } from "@/components/auth/GoogleButton";
+import { AccountMenu } from "@/components/auth/AccountMenu";
 import { useAppStore } from "@/store/useAppStore";
 import { useSync } from "@/hooks/useSync";
 import { useAccounts, useEnsureUser } from "@/hooks/useAccounts";
@@ -157,14 +157,8 @@ export function RootLayout() {
             </div>
             {syncControl}
 
-            <div className="border-hairline mt-2 flex items-center gap-2 border-t pt-3">
-              <UserButton
-                afterSignOutUrl="/"
-                appearance={{ elements: { avatarBox: "h-7 w-7" } }}
-              />
-              <span className="text-muted-foreground text-xs">
-                Your account
-              </span>
+            <div className="border-hairline mt-2 border-t pt-3">
+              <AccountMenu />
             </div>
           </div>
         </aside>
@@ -195,22 +189,12 @@ export function RootLayout() {
           <div className="flex items-center gap-4">
             <Authenticated>
               <span className="md:hidden">{syncControl}</span>
-              <span className="hidden md:inline">
-                <UserButton afterSignOutUrl="/" />
+              <span className="hidden max-w-56 md:block">
+                <AccountMenu />
               </span>
             </Authenticated>
             <Unauthenticated>
-              <SignInButton mode="modal">
-                <button
-                  type="button"
-                  className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
-                >
-                  Sign in
-                </button>
-              </SignInButton>
-              <SignUpButton mode="modal">
-                <Button size="sm">Get started</Button>
-              </SignUpButton>
+              <GoogleButton label="Sign in with Google" size="sm" />
             </Unauthenticated>
           </div>
         </header>

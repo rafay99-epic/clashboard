@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 import { Authenticated, AuthLoading, Unauthenticated } from "convex/react";
-import { SignInButton, SignUpButton } from "@clerk/clerk-react";
-import { LogIn, ShieldQuestion } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ShieldQuestion } from "lucide-react";
+import { GoogleButton } from "@/components/auth/GoogleButton";
 import { EmptyState } from "@/components/ui/bits";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -22,19 +21,7 @@ function SignInWall() {
       icon={<ShieldQuestion className="h-8 w-8" />}
       title="Sign in to see this"
       body="Villages are tied to your Clashboard account, so tracked tags and battle logs stay private to you."
-      action={
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <SignInButton mode="modal">
-            <Button>
-              <LogIn />
-              Sign in
-            </Button>
-          </SignInButton>
-          <SignUpButton mode="modal">
-            <Button variant="outline">Create account</Button>
-          </SignUpButton>
-        </div>
-      }
+      action={<GoogleButton />}
     />
   );
 }
