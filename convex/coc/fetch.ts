@@ -1,10 +1,10 @@
 import { v } from "convex/values";
-import { action } from "../_generated/server";
+import { internalAction } from "../_generated/server";
 import { encodePlayerTag } from "../lib/constants";
 import type { CocPlayer } from "../lib/types";
 import { cocRequest } from "./request";
 
-export const fetchPlayer = action({
+export const fetchPlayer = internalAction({
   args: {
     playerTag: v.string(),
   },

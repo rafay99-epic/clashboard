@@ -17,6 +17,7 @@ export function friendlyError(err: unknown): string {
   if (lowered.includes("403") || lowered.includes("token rejected")) {
     return "Clash API rejected the key (403). The key is locked to an IP — allow this server's IP on developer.clashofclans.com.";
   }
+  if (lowered.includes("has no record of")) return message;
   if (lowered.includes("not found") || lowered.includes("404")) {
     return "No player with that tag. Check it in game under Settings → My Account.";
   }

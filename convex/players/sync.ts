@@ -12,7 +12,9 @@ async function runSyncPipeline(
   playerTag: string,
 ): Promise<SyncResult> {
   try {
-    const raw = await ctx.runAction(api.coc.fetch.fetchPlayer, { playerTag });
+    const raw = await ctx.runAction(internal.coc.fetch.fetchPlayer, {
+      playerTag,
+    });
     const player = raw as CocPlayer;
 
     const normalized = normalizePlayer(player, playerTag);

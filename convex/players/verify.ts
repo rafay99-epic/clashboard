@@ -25,10 +25,13 @@ export const verifyOwnership = action({
     }
 
     try {
-      const result = await ctx.runAction(api.coc.verify.verifyPlayerToken, {
-        playerTag: args.playerTag,
-        token,
-      });
+      const result = await ctx.runAction(
+        internal.coc.verify.verifyPlayerToken,
+        {
+          playerTag: args.playerTag,
+          token,
+        },
+      );
       const verified = result.status === "ok";
       if (!verified) {
         return { ok: true, verified: false };

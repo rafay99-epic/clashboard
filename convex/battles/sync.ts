@@ -22,7 +22,7 @@ async function runBattleLogPipeline(
   playerTag: string,
 ): Promise<SyncResult> {
   try {
-    const raw = await ctx.runAction(api.coc.battlelog.fetchBattleLog, {
+    const raw = await ctx.runAction(internal.coc.battlelog.fetchBattleLog, {
       playerTag,
     });
     const log = raw as CocBattleLog;
