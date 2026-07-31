@@ -1,5 +1,6 @@
 import { v } from "convex/values";
 import { query } from "../_generated/server";
+import { requireClerkId } from "../lib/auth";
 
 export const getRoster = query({
   args: {
@@ -20,6 +21,7 @@ export const getRoster = query({
     ),
   },
   handler: async (ctx, args) => {
+    await requireClerkId(ctx);
     let rows = await ctx.db.query("roster").collect();
     if (args.base) rows = rows.filter((r) => r.base === args.base);
     if (args.category) rows = rows.filter((r) => r.category === args.category);

@@ -2,10 +2,10 @@ import { v } from "convex/values";
 import { action, internalMutation } from "../_generated/server";
 import { api, internal } from "../_generated/api";
 import { normalizePlayerTag } from "../lib/constants";
+import { NOT_LINKED, requireClerkId } from "../lib/auth";
 
-export type VerifyResult =
-  | { ok: true; verified: boolean; verifiedAt?: number }
-  | { ok: false; error: string };
+export type { VerifyResult } from "../../src/types/api";
+import type { VerifyResult } from "../../src/types/api";
 
 export const verifyOwnership = action({
   args: {
@@ -13,6 +13,12 @@ export const verifyOwnership = action({
     token: v.string(),
   },
   handler: async (ctx, args): Promise<VerifyResult> => {
+    const clerkId = await requireClerkId(ctx);
+    const linked: boolean = await ctx.runQuery(api.accounts.isLinked, {
+      playerTag: args.playerTag,
+    });
+    if (!linked) return { ok: false, error: NOT_LINKED };
+
     const token = args.token.trim();
     if (!token) {
       return { ok: false, error: "Enter the API token from the game." };
@@ -30,6 +36,11 @@ export const verifyOwnership = action({
 
       const verifiedAt = Date.now();
       await ctx.runMutation(internal.players.verify.markVerified, {
+        playerTag: args.playerTag,
+        verifiedAt,
+      });
+      await ctx.runMutation(internal.accounts.markVerified, {
+        clerkId,
         playerTag: args.playerTag,
         verifiedAt,
       });

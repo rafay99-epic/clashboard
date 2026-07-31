@@ -1,8 +1,8 @@
-import { mutation } from "../_generated/server";
+import { internalMutation } from "../_generated/server";
 import { ROSTER_CATEGORIES, ROSTER_BASES } from "../schema";
 import rosterManifest from "../../src/data/roster-manifest.json";
 
-export const seedRoster = mutation({
+export const seedRoster = internalMutation({
   args: {},
   handler: async (ctx) => {
     const existing = await ctx.db.query("roster").first();

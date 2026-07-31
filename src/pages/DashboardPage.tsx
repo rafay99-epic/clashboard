@@ -12,6 +12,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { usePlayerData, useBattleLog } from "@/hooks/usePlayerData";
 import { useSync } from "@/hooks/useSync";
+import { useAccounts } from "@/hooks/useAccounts";
 import { useAppStore } from "@/store/useAppStore";
 import {
   buildRoster,
@@ -53,11 +54,11 @@ function DashboardSkeleton() {
 }
 
 export function DashboardPage() {
-  const playerTag = useAppStore((s) => s.playerTag);
+  const { playerTag } = useAccounts();
   const lastSyncAt = useAppStore((s) => s.lastSyncAt);
   const { player, roster, loading } = usePlayerData(playerTag);
   const { items: battles } = useBattleLog(playerTag);
-  const { sync, syncing, lastError } = useSync();
+  const { sync, syncing, lastError } = useSync(playerTag);
 
   const categories = useMemo(() => {
     const grouped = buildRoster(player, roster, "home");

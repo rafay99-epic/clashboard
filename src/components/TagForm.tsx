@@ -9,6 +9,7 @@ import { useAppStore } from "@/store/useAppStore";
 import { normalizeTag } from "@/lib/roster";
 import { friendlyError } from "@/lib/errors";
 import { cn } from "@/lib/utils";
+import type { SyncResult } from "@/types";
 
 export const TAG_PATTERN = /^[0289PYLQGRJCUV]{3,12}$/;
 
@@ -25,7 +26,7 @@ export function TagForm({
 }) {
   const navigate = useNavigate();
   const syncPlayer = useAction(api.players.sync.syncPlayer);
-  const addAccount = useAppStore((s) => s.addAccount);
+  const setActiveTag = useAppStore((s) => s.setActiveTag);
   const setSyncStatus = useAppStore((s) => s.setSyncStatus);
   const setLastSyncAt = useAppStore((s) => s.setLastSyncAt);
   const setLastError = useAppStore((s) => s.setLastError);
@@ -50,7 +51,7 @@ export function TagForm({
     setError(null);
     setSyncStatus("syncing");
     try {
-      const result = await syncPlayer({ playerTag: normalized });
+      const result: SyncResult = await syncPlayer({ playerTag: normalized });
       if (!result.ok) {
         const message = friendlyError(result.error);
         setError(message);
@@ -58,7 +59,7 @@ export function TagForm({
         setLastError(message);
         return;
       }
-      addAccount(normalized, result.name);
+      setActiveTag(normalized);
       setLastSyncAt(result.fetchedAt);
       setLastError(null);
       setSyncStatus("idle");

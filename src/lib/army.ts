@@ -1,38 +1,10 @@
 import index from "../data/army-index.json";
+import type { Army, ArmyBucket, ArmyIndex, ArmyItem, ArmyHero } from "@/types";
 
-export interface ArmyItem {
-  id: number;
-  name: string;
-  image: string;
-  count: number;
-  housing?: number;
-}
+export type { Army, ArmyItem, ArmyHero };
 
-export interface ArmyHero {
-  id: number;
-  name: string;
-  image: string;
-  pet?: { name: string; image: string };
-  equipment: { name: string; image: string }[];
-}
-
-export interface Army {
-  heroes: ArmyHero[];
-  troops: ArmyItem[];
-  spells: ArmyItem[];
-  unknown: number;
-  housing: number;
-}
-
-type Bucket = "u" | "s" | "h" | "p" | "e";
-
-const lookup = (bucket: Bucket, id: number) =>
-  (
-    index as Record<
-      string,
-      Record<string, { name: string; image: string; housing?: number }>
-    >
-  )[bucket]?.[String(id)];
+const lookup = (bucket: ArmyBucket, id: number) =>
+  (index as ArmyIndex)[bucket]?.[String(id)];
 
 export function parseArmy(code: string | undefined | null): Army | null {
   if (!code) return null;
@@ -46,7 +18,7 @@ export function parseArmy(code: string | undefined | null): Army | null {
   };
 
   for (const segment of code.split(/(?=[hidus])/)) {
-    const marker = segment[0] as Bucket | "i" | "d";
+    const marker = segment[0] as ArmyBucket | "i" | "d";
     const body = segment.slice(1);
     if (!body) continue;
 

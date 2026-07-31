@@ -1,7 +1,7 @@
 import { useQuery as useConvexQuery } from "convex/react";
 import { api } from "convex/_generated/api";
-import type { PlayerData, RosterEntry } from "@/lib/roster";
 import { normalizeTag } from "@/lib/roster";
+import type { BattleEntry, PlayerData, RosterEntry } from "@/types";
 
 export function usePlayerData(playerTag: string | null) {
   const normalized = playerTag ? normalizeTag(playerTag) : null;
@@ -31,21 +31,7 @@ export function usePlayerData(playerTag: string | null) {
   };
 }
 
-export interface BattleEntry {
-  battleType: string;
-  attack: boolean;
-  armyShareCode?: string;
-  opponentPlayerTag: string;
-  opponentName: string;
-  opponentTownHallLevel?: number;
-  stars: number;
-  destructionPercentage: number;
-  lootedResources?: { name: string; amount: number }[];
-  extraLootedResources?: { name: string; amount: number }[];
-  availableLoot?: { name: string; amount: number }[];
-  battleTime?: number;
-  battleTimestamp: string;
-}
+export type { BattleEntry };
 
 export function useBattleLog(playerTag: string | null) {
   const normalized = playerTag ? normalizeTag(playerTag) : null;

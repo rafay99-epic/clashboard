@@ -1,73 +1,25 @@
+import type {
+  CocUnit,
+  PlayerData,
+  RosterBase,
+  RosterCategory,
+  RosterEntry,
+  RosterSummary,
+  RosterUnit,
+} from "@/types";
+
+export type {
+  CocUnit,
+  PlayerData,
+  RosterBase,
+  RosterCategory,
+  RosterEntry,
+  RosterSummary,
+  RosterUnit,
+};
+
 export function normalizeTag(tag: string): string {
   return tag.trim().replace(/^#/, "").toUpperCase();
-}
-
-export interface RosterEntry {
-  base: "home" | "builder" | "capital";
-  category:
-    | "troops"
-    | "spells"
-    | "heroes"
-    | "siege"
-    | "buildings"
-    | "traps"
-    | "pets"
-    | "equipment";
-  name: string;
-  aliases: string[];
-  maxLevel: number;
-  imageUrl: string;
-}
-
-export type RosterBase = RosterEntry["base"];
-export type RosterCategory = RosterEntry["category"];
-
-export interface CocUnit {
-  name: string;
-  level: number;
-  maxLevel: number;
-  village?: string;
-}
-
-export interface CocBuilding {
-  name: string;
-  level: number;
-  maxLevel?: number;
-}
-
-export interface PlayerData {
-  playerTag: string;
-  name: string;
-  townHallLevel: number;
-  builderHallLevel?: number;
-  expLevel: number;
-  trophies: number;
-  bestTrophies: number;
-  attackWins: number;
-  defenseWins: number;
-  warStars?: number;
-  donations?: number;
-  donationsReceived?: number;
-  clanCapitalContributions?: number;
-  builderBaseTrophies?: number;
-  bestBuilderBaseTrophies?: number;
-  clanName?: string;
-  clanTag?: string;
-  clanLevel?: number;
-  clanBadgeUrls?: { small?: string; medium?: string; large?: string };
-  leagueId?: number;
-  leagueName?: string;
-  leagueIconUrls?: { small?: string; large?: string };
-  builderLeagueId?: number;
-  builderLeagueName?: string;
-  troops: CocUnit[];
-  spells: CocUnit[];
-  heroes: CocUnit[];
-  heroEquipment?: CocUnit[];
-  buildings: CocBuilding[];
-  lastFetchedAt: number;
-  lastSuccessfulAt: number;
-  lastError?: string;
 }
 
 export const CATEGORY_LABELS: Record<RosterCategory, string> = {
@@ -110,17 +62,6 @@ const CATEGORY_SOURCE: Record<
   buildings: null,
   traps: null,
 };
-
-export interface RosterUnit {
-  name: string;
-  imageUrl: string;
-  category: RosterCategory;
-  level: number;
-  maxLevel: number;
-  locked: boolean;
-  maxed: boolean;
-  infoOnly: boolean;
-}
 
 function inBase(unit: CocUnit, base: RosterBase): boolean {
   if (base === "capital") return unit.village === "clanCapital";
@@ -172,16 +113,6 @@ export function buildRoster(
     });
   }
   return out;
-}
-
-export interface RosterSummary {
-  total: number;
-  owned: number;
-  locked: number;
-  maxed: number;
-  progress: number;
-  maxedShare: number;
-  remaining: number;
 }
 
 export function summarize(units: RosterUnit[]): RosterSummary {

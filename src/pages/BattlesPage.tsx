@@ -13,7 +13,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { useBattleLog, type BattleEntry } from "@/hooks/usePlayerData";
 import { useSync } from "@/hooks/useSync";
-import { useAppStore } from "@/store/useAppStore";
+import { useAccounts } from "@/hooks/useAccounts";
 import { parseArmy, armyLink, type Army } from "@/lib/army";
 import { cn, compact, parseBattleTimestamp, relativeTime } from "@/lib/utils";
 
@@ -292,6 +292,19 @@ function BattleRow({ battle }: { battle: BattleEntry }) {
           army && "hover:bg-foreground/[0.02] cursor-pointer",
         )}
         onClick={army ? () => setOpen((v) => !v) : undefined}
+        onKeyDown={
+          army
+            ? (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setOpen((v) => !v);
+                }
+              }
+            : undefined
+        }
+        role={army ? "button" : undefined}
+        tabIndex={army ? 0 : undefined}
+        aria-expanded={army ? open : undefined}
       >
         <div className="flex items-center gap-2 sm:flex-col sm:items-start sm:gap-1">
           <span
@@ -396,9 +409,9 @@ function BattleRow({ battle }: { battle: BattleEntry }) {
 }
 
 export function BattlesPage() {
-  const playerTag = useAppStore((s) => s.playerTag);
+  const { playerTag } = useAccounts();
   const { items, fetchedAt, loading } = useBattleLog(playerTag);
-  const { sync, syncing, lastError } = useSync();
+  const { sync, syncing, lastError } = useSync(playerTag);
   const [filter, setFilter] = useState<Filter>("all");
 
   const stats = useMemo(() => {
