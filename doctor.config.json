@@ -1,0 +1,8 @@
+{
+  "ignore": {
+    "files": ["convex/**", "src/components/ui/**"]
+  },
+  "rules": {
+    "deslop/unused-dependency": "off"
+  }
+}

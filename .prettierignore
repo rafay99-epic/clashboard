@@ -1,0 +1,12 @@
+node_modules
+dist
+.convex
+convex/_generated
+public/images
+src/data/roster-manifest.json
+bun.lock
+*.local
+.agents
+.commandcode
+.hermes
+.env*

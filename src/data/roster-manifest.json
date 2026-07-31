@@ -1,0 +1,2042 @@
+[
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Air Bombs",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/air-bombs/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Archer Tower",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/archer-tower/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Army Camp",
+    "aliases": [],
+    "maxLevel": 1,
+    "imageUrl": "images/builder/army-buildings/army-camp/normal/level-1.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "B.O.B Control",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/builder/resource-buildings/bob-control/normal/level-5.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Battle Copter Altar",
+    "aliases": [],
+    "maxLevel": 1,
+    "imageUrl": "images/builder/army-buildings/battle-copter-altar/normal/level-1.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Battle Machine Altar",
+    "aliases": [],
+    "maxLevel": 1,
+    "imageUrl": "images/builder/army-buildings/battle-machine-altar/normal/level-1.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Builder Barracks",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/builder/army-buildings/builder-barracks/normal/level-12.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Cannon",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/cannon/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Crusher",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/crusher/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Double Cannon",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/double-cannon/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Elixir Collector",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/resource-buildings/elixir-collector/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Elixir Storage",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/resource-buildings/elixir-storage/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Firecrackers",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/firecrackers/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Gem Mine",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/resource-buildings/gem-mine/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Giant Cannon",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/giant-cannon/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Gold Mine",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/resource-buildings/gold-mine/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Gold Storage",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/resource-buildings/gold-storage/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Guard Post",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/guard-post/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Healing Hut",
+    "aliases": [],
+    "maxLevel": 6,
+    "imageUrl": "images/builder/army-buildings/healing-hut/normal/level-6.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Hidden Tesla",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/hidden-tesla/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Lava Launcher",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/lava-launcher/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Mega Tesla",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/mega-tesla/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Multi Mortar",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/multi-mortar/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "O.T.T.O's Outpost",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/ottos-outpost/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Reinforcement Camp",
+    "aliases": [],
+    "maxLevel": 1,
+    "imageUrl": "images/builder/army-buildings/reinforcement-camp/normal/level-1.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Roaster",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/defenses/roaster/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "Star Laboratory",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/army-buildings/star-laboratory/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "buildings",
+    "name": "X-Bow",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/builder/defenses/x-bow/normal/level-5.png"
+  },
+  {
+    "base": "builder",
+    "category": "heroes",
+    "name": "Battle Copter",
+    "aliases": [],
+    "maxLevel": 35,
+    "imageUrl": "images/builder/heroes/battle-copter/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "heroes",
+    "name": "Battle Machine",
+    "aliases": [],
+    "maxLevel": 35,
+    "imageUrl": "images/builder/heroes/battle-machine/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "traps",
+    "name": "Mega Mine",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/traps/mega-mine/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "traps",
+    "name": "Mine",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/traps/mine/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "traps",
+    "name": "Push Trap",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/builder/traps/push-trap/normal/level-10.png"
+  },
+  {
+    "base": "builder",
+    "category": "traps",
+    "name": "Spring Trap",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/builder/traps/spring-trap/normal/level-5.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Baby Dragon",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/baby-dragon/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Beta Minion",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/beta-minion/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Bomber",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/bomber/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Boxer Giant",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/boxer-giant/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Cannon Cart",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/cannon-cart/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Drop Ship",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/drop-ship/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Electrofire Wizard",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/electrofire-wizard/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Hog Glider",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/hog-glider/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Night Witch",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/night-witch/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Power P.E.K.K.A",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/power-pekka/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Raged Barbarian",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/raged-barbarian/icon.png"
+  },
+  {
+    "base": "builder",
+    "category": "troops",
+    "name": "Sneaky Archer",
+    "aliases": [],
+    "maxLevel": 20,
+    "imageUrl": "images/builder/troops/sneaky-archer/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Air Bombs",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/air-bombs/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Air Defense",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/air-defense/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Army Camp",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/army-buildings/army-camp/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Blast Bow",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/blast-bow/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Bomb Tower",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/bomb-tower/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Cannon",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/cannon/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Crusher",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/crusher/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Giant Cannon",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/giant-cannon/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Goblin Thrower",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/clan-capital/defenses/goblin-thrower/normal/level-4.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Hidden Mega Tesla",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/hidden-mega-tesla/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Inferno Tower",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/inferno-tower/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Mini-Minion Hive",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/clan-capital/defenses/mini-minion-hive/normal/level-4.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Multi Cannon",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/multi-cannon/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Multi Mortar",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/multi-mortar/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Raid Cart Post",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/raid-cart-post/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Rapid Rockets",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/rapid-rockets/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Reflector",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/clan-capital/defenses/reflector/normal/level-4.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Rocket Artillery",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/rocket-artillery/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Spear Thrower",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/spear-thrower/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Spell Storage",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/army-buildings/spell-storage/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Super Dragon Post",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/super-dragon-post/normal/level-4.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Super Giant Post",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/super-giant-post/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "buildings",
+    "name": "Super Wizard Tower",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/defenses/super-wizard-tower/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "spells",
+    "name": "Endless Haste Spell",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/clan-capital/spells/endless-haste-spell/normal/level-4.png"
+  },
+  {
+    "base": "capital",
+    "category": "spells",
+    "name": "Frost Spell",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/spells/frost-spell/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "spells",
+    "name": "Graveyard Spell",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/clan-capital/spells/graveyard-spell/normal/level-4.png"
+  },
+  {
+    "base": "capital",
+    "category": "spells",
+    "name": "Healing Spell",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/spells/healing-spell/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "spells",
+    "name": "Jump Spell",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/spells/jump-spell/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "spells",
+    "name": "Lightning Spell",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/spells/lightning-spell/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "spells",
+    "name": "Rage Spell",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/spells/rage-spell/normal/level-5.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Battle Ram",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/battle-ram/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Flying Fortress",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/flying-fortress/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Hog Raiders",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/hog-raiders/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Inferno Dragon",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/clan-capital/troops/inferno-dragon/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Mega Sparky",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/clan-capital/troops/mega-sparky/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Minion Horde",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/minion-horde/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Mountain Golem",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/mountain-golem/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Power P.E.K.K.A",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/power-pekka/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Raid Cart",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/raid-cart/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Rocket Balloon",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/rocket-balloon/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Skeleton Barrels",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/skeleton-barrels/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Sneaky Archer",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/sneaky-archer/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Super Barbarian",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/super-barbarian/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Super Dragon",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/super-dragon/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Super Giant",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/super-giant/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Super Miner",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/clan-capital/troops/super-miner/icon.png"
+  },
+  {
+    "base": "capital",
+    "category": "troops",
+    "name": "Super Wizard",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/clan-capital/troops/super-wizard/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Air Defense",
+    "aliases": [],
+    "maxLevel": 16,
+    "imageUrl": "images/home/defenses/air-defense/normal/level-16.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Air Sweeper",
+    "aliases": [],
+    "maxLevel": 7,
+    "imageUrl": "images/home/defenses/air-sweeper/normal/level-7.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Archer Tower",
+    "aliases": [],
+    "maxLevel": 21,
+    "imageUrl": "images/home/defenses/archer-tower/normal/level-21.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Army Camp",
+    "aliases": [],
+    "maxLevel": 13,
+    "imageUrl": "images/home/army-buildings/army-camp/normal/level-13.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Barracks",
+    "aliases": [],
+    "maxLevel": 19,
+    "imageUrl": "images/home/army-buildings/barracks/normal/level-19.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Blacksmith",
+    "aliases": [],
+    "maxLevel": 9,
+    "imageUrl": "images/home/army-buildings/blacksmith/normal/level-9.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Bomb Tower",
+    "aliases": [],
+    "maxLevel": 13,
+    "imageUrl": "images/home/defenses/bomb-tower/normal/level-13.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Builder's Hut",
+    "aliases": [],
+    "maxLevel": 7,
+    "imageUrl": "images/home/defenses/builders-hut/normal/level-7.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Cannon",
+    "aliases": [],
+    "maxLevel": 21,
+    "imageUrl": "images/home/defenses/cannon/normal/level-21.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Clan Castle",
+    "aliases": [],
+    "maxLevel": 14,
+    "imageUrl": "images/home/resource-buildings/clan-castle/normal/level-14.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Crafting Station",
+    "aliases": [],
+    "maxLevel": 1,
+    "imageUrl": "images/home/defenses/crafting-station/normal/level-1.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Dark Barracks",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/army-buildings/dark-barracks/normal/level-12.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Dark Elixir Drill",
+    "aliases": [],
+    "maxLevel": 11,
+    "imageUrl": "images/home/resource-buildings/dark-elixir-drill/normal/level-11.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Dark Elixir Storage",
+    "aliases": [],
+    "maxLevel": 13,
+    "imageUrl": "images/home/resource-buildings/dark-elixir-storage/normal/level-13.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Dark Spell Factory",
+    "aliases": [],
+    "maxLevel": 7,
+    "imageUrl": "images/home/army-buildings/dark-spell-factory/normal/level-7.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Eagle Artillery",
+    "aliases": [],
+    "maxLevel": 7,
+    "imageUrl": "images/home/defenses/eagle-artillery/normal/level-7.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Elixir Collector",
+    "aliases": [],
+    "maxLevel": 17,
+    "imageUrl": "images/home/resource-buildings/elixir-collector/normal/level-17.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Elixir Storage",
+    "aliases": [],
+    "maxLevel": 19,
+    "imageUrl": "images/home/resource-buildings/elixir-storage/normal/level-19.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Firespitter",
+    "aliases": [],
+    "maxLevel": 3,
+    "imageUrl": "images/home/defenses/firespitter/normal/level-3.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Gold Mine",
+    "aliases": [],
+    "maxLevel": 17,
+    "imageUrl": "images/home/resource-buildings/gold-mine/normal/level-17.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Gold Storage",
+    "aliases": [],
+    "maxLevel": 19,
+    "imageUrl": "images/home/resource-buildings/gold-storage/normal/level-19.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Hero Hall",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/army-buildings/hero-hall/normal/level-12.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Hidden Tesla",
+    "aliases": [],
+    "maxLevel": 17,
+    "imageUrl": "images/home/defenses/hidden-tesla/normal/level-17.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Inferno Tower",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/defenses/inferno-tower/normal/level-12.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Laboratory",
+    "aliases": [],
+    "maxLevel": 16,
+    "imageUrl": "images/home/army-buildings/laboratory/normal/level-16.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Monolith",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/defenses/monolith/normal/level-4.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Mortar",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/defenses/mortar/normal/level-18.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Multi-Archer Tower",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/defenses/multi-archer-tower/normal/level-4.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Multi-Gear Tower",
+    "aliases": [],
+    "maxLevel": 3,
+    "imageUrl": "images/home/defenses/multi-gear-tower/normal/level-3.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Pet House",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/army-buildings/pet-house/normal/level-12.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Revenge Tower",
+    "aliases": [],
+    "maxLevel": 2,
+    "imageUrl": "images/home/defenses/revenge-tower/normal/level-2.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Ricochet Cannon",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/defenses/ricochet-cannon/normal/level-4.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Scattershot",
+    "aliases": [],
+    "maxLevel": 6,
+    "imageUrl": "images/home/defenses/scattershot/normal/level-6.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Spell Factory",
+    "aliases": [],
+    "maxLevel": 9,
+    "imageUrl": "images/home/army-buildings/spell-factory/normal/level-9.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Spell Tower",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/defenses/spell-tower/normal/level-4.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Super Wizard Tower",
+    "aliases": [],
+    "maxLevel": 2,
+    "imageUrl": "images/home/defenses/super-wizard-tower/normal/level-2.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Town Hall",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/town-hall/normal/level-18.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Wall",
+    "aliases": [],
+    "maxLevel": 19,
+    "imageUrl": "images/home/defenses/wall/normal/level-19.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Wizard Tower",
+    "aliases": [],
+    "maxLevel": 17,
+    "imageUrl": "images/home/defenses/wizard-tower/normal/level-17.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "Workshop",
+    "aliases": [],
+    "maxLevel": 8,
+    "imageUrl": "images/home/army-buildings/workshop/normal/level-8.png"
+  },
+  {
+    "base": "home",
+    "category": "buildings",
+    "name": "X-Bow",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/defenses/x-bow/normal/level-12.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Action Figure",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/action-figure/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Archer Puppet",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/archer-puppet/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Barbarian Puppet",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/barbarian-puppet/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Dark Crown",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/dark-crown/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Dark Orb",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/dark-orb/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Earthquake Boots",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/earthquake-boots/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Electro Boots",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/electro-boots/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Eternal Tome",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/eternal-tome/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Fire Heart",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/fire-heart/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Fireball",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/fireball/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Flame Blower",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/flame-blower/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Frost Flake",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/frost-flake/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Frozen Arrow",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/frozen-arrow/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Giant Arrow",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/giant-arrow/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Giant Gauntlet",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/giant-gauntlet/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Haste Vial",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/haste-vial/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Healer Puppet",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/healer-puppet/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Healing Tome",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/healing-tome/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Henchmen Puppet",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/henchmen-puppet/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Heroic Torch",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/heroic-torch/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Hog Rider Puppet",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/hog-rider-puppet/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Invisibility Vial",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/invisibility-vial/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Lavaloon Puppet",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/lavaloon-puppet/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Life Gem",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/life-gem/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Magic Mirror",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/magic-mirror/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Metal Pants",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/metal-pants/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Meteor Staff",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/meteor-staff/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Noble Iron",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/noble-iron/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Rage Gem",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/rage-gem/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Rage Vial",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/rage-vial/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Rocket Backpack",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/rocket-backpack/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Rocket Spear",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/rocket-spear/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Royal Gem",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/royal-gem/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Seeking Shield",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/seeking-shield/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Snake Bracelet",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/snake-bracelet/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Spiky Ball",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/spiky-ball/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Stick Horse",
+    "aliases": [],
+    "maxLevel": 27,
+    "imageUrl": "images/home/hero-equipment/stick-horse/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Stun Blaster",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/stun-blaster/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "equipment",
+    "name": "Vampstache",
+    "aliases": [],
+    "maxLevel": 18,
+    "imageUrl": "images/home/hero-equipment/vampstache/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "heroes",
+    "name": "Archer Queen",
+    "aliases": [],
+    "maxLevel": 105,
+    "imageUrl": "images/home/heroes/archer-queen/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "heroes",
+    "name": "Barbarian King",
+    "aliases": [],
+    "maxLevel": 105,
+    "imageUrl": "images/home/heroes/barbarian-king/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "heroes",
+    "name": "Dragon Duke",
+    "aliases": [],
+    "maxLevel": 25,
+    "imageUrl": "images/home/heroes/dragon-duke/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "heroes",
+    "name": "Grand Warden",
+    "aliases": [],
+    "maxLevel": 80,
+    "imageUrl": "images/home/heroes/grand-warden/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "heroes",
+    "name": "Minion Prince",
+    "aliases": [],
+    "maxLevel": 95,
+    "imageUrl": "images/home/heroes/minion-prince/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "heroes",
+    "name": "Royal Champion",
+    "aliases": [],
+    "maxLevel": 55,
+    "imageUrl": "images/home/heroes/royal-champion/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Angry Jelly",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/home/pets/angry-jelly/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Diggy",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/home/pets/diggy/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Electro Owl",
+    "aliases": [],
+    "maxLevel": 15,
+    "imageUrl": "images/home/pets/electro-owl/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Frosty",
+    "aliases": [],
+    "maxLevel": 15,
+    "imageUrl": "images/home/pets/frosty/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Greedy Raven",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/home/pets/greedy-raven/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "L.A.S.S.I",
+    "aliases": [],
+    "maxLevel": 15,
+    "imageUrl": "images/home/pets/lassi/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Mighty Yak",
+    "aliases": [],
+    "maxLevel": 15,
+    "imageUrl": "images/home/pets/mighty-yak/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Phoenix",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/home/pets/phoenix/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Poison Lizard",
+    "aliases": [],
+    "maxLevel": 15,
+    "imageUrl": "images/home/pets/poison-lizard/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Sneezy",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/home/pets/sneezy/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Spirit Fox",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/home/pets/spirit-fox/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "pets",
+    "name": "Unicorn",
+    "aliases": [],
+    "maxLevel": 15,
+    "imageUrl": "images/home/pets/unicorn/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "siege",
+    "name": "Battle Blimp",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/siege-machines/battle-blimp/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "siege",
+    "name": "Battle Drill",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/siege-machines/battle-drill/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "siege",
+    "name": "Flame Flinger",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/siege-machines/flame-flinger/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "siege",
+    "name": "Log Launcher",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/siege-machines/log-launcher/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "siege",
+    "name": "Siege Barracks",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/siege-machines/siege-barracks/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "siege",
+    "name": "Stone Slammer",
+    "aliases": [],
+    "maxLevel": 6,
+    "imageUrl": "images/home/siege-machines/stone-slammer/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "siege",
+    "name": "Troop Launcher",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/siege-machines/troop-launcher/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "siege",
+    "name": "Wall Wrecker",
+    "aliases": [],
+    "maxLevel": 6,
+    "imageUrl": "images/home/siege-machines/wall-wrecker/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Bat Spell",
+    "aliases": [],
+    "maxLevel": 8,
+    "imageUrl": "images/home/spells/bat-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Clone Spell",
+    "aliases": [],
+    "maxLevel": 8,
+    "imageUrl": "images/home/spells/clone-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Earthquake Spell",
+    "aliases": [],
+    "maxLevel": 8,
+    "imageUrl": "images/home/spells/earthquake-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Freeze Spell",
+    "aliases": [],
+    "maxLevel": 7,
+    "imageUrl": "images/home/spells/freeze-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Haste Spell",
+    "aliases": [],
+    "maxLevel": 7,
+    "imageUrl": "images/home/spells/haste-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Healing Spell",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/spells/healing-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Ice Block Spell",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/spells/ice-block-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Invisibility Spell",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/spells/invisibility-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Jump Spell",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/spells/jump-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Lightning Spell",
+    "aliases": [],
+    "maxLevel": 13,
+    "imageUrl": "images/home/spells/lightning-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Overgrowth Spell",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/spells/overgrowth-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Poison Spell",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/spells/poison-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Rage Spell",
+    "aliases": [],
+    "maxLevel": 6,
+    "imageUrl": "images/home/spells/rage-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Recall Spell",
+    "aliases": [],
+    "maxLevel": 6,
+    "imageUrl": "images/home/spells/recall-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Revive Spell",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/spells/revive-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Skeleton Spell",
+    "aliases": [],
+    "maxLevel": 8,
+    "imageUrl": "images/home/spells/skeleton-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "spells",
+    "name": "Totem Spell",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/spells/totem-spell/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "traps",
+    "name": "Air Bomb",
+    "aliases": [],
+    "maxLevel": 13,
+    "imageUrl": "images/home/traps/air-bomb/normal/level-13.png"
+  },
+  {
+    "base": "home",
+    "category": "traps",
+    "name": "Bomb",
+    "aliases": [],
+    "maxLevel": 14,
+    "imageUrl": "images/home/traps/bomb/normal/level-14.png"
+  },
+  {
+    "base": "home",
+    "category": "traps",
+    "name": "Giant Bomb",
+    "aliases": [],
+    "maxLevel": 11,
+    "imageUrl": "images/home/traps/giant-bomb/normal/level-11.png"
+  },
+  {
+    "base": "home",
+    "category": "traps",
+    "name": "Giga Bomb",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/traps/giga-bomb/normal/level-4.png"
+  },
+  {
+    "base": "home",
+    "category": "traps",
+    "name": "Seeking Air Mine",
+    "aliases": [],
+    "maxLevel": 8,
+    "imageUrl": "images/home/traps/seeking-air-mine/normal/level-8.png"
+  },
+  {
+    "base": "home",
+    "category": "traps",
+    "name": "Skeleton Trap",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/traps/skeleton-trap/normal/level-5.png"
+  },
+  {
+    "base": "home",
+    "category": "traps",
+    "name": "Spring Trap",
+    "aliases": [],
+    "maxLevel": 13,
+    "imageUrl": "images/home/traps/spring-trap/normal/level-13.png"
+  },
+  {
+    "base": "home",
+    "category": "traps",
+    "name": "Tornado Trap",
+    "aliases": [],
+    "maxLevel": 3,
+    "imageUrl": "images/home/traps/tornado-trap/normal/level-3.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Apprentice Warden",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/troops/apprentice-warden/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Archer",
+    "aliases": [],
+    "maxLevel": 14,
+    "imageUrl": "images/home/troops/archer/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Baby Dragon",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/troops/baby-dragon/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Balloon",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/troops/balloon/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Barbarian",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/troops/barbarian/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Bowler",
+    "aliases": [],
+    "maxLevel": 10,
+    "imageUrl": "images/home/troops/bowler/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Dragon",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/troops/dragon/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Dragon Rider",
+    "aliases": [],
+    "maxLevel": 6,
+    "imageUrl": "images/home/troops/dragon-rider/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Druid",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/troops/druid/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Electro Dragon",
+    "aliases": [],
+    "maxLevel": 9,
+    "imageUrl": "images/home/troops/electro-dragon/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Electro Titan",
+    "aliases": [],
+    "maxLevel": 5,
+    "imageUrl": "images/home/troops/electro-titan/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Furnace",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/troops/furnace/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Giant",
+    "aliases": [],
+    "maxLevel": 14,
+    "imageUrl": "images/home/troops/giant/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Goblin",
+    "aliases": [],
+    "maxLevel": 9,
+    "imageUrl": "images/home/troops/goblin/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Golem",
+    "aliases": [],
+    "maxLevel": 14,
+    "imageUrl": "images/home/troops/golem/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Headhunter",
+    "aliases": [],
+    "maxLevel": 3,
+    "imageUrl": "images/home/troops/headhunter/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Healer",
+    "aliases": [],
+    "maxLevel": 11,
+    "imageUrl": "images/home/troops/healer/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Hog Rider",
+    "aliases": [],
+    "maxLevel": 15,
+    "imageUrl": "images/home/troops/hog-rider/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Ice Golem",
+    "aliases": [],
+    "maxLevel": 9,
+    "imageUrl": "images/home/troops/ice-golem/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Lava Hound",
+    "aliases": [],
+    "maxLevel": 8,
+    "imageUrl": "images/home/troops/lava-hound/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Meteor Golem",
+    "aliases": [],
+    "maxLevel": 3,
+    "imageUrl": "images/home/troops/meteor-golem/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Miner",
+    "aliases": [],
+    "maxLevel": 12,
+    "imageUrl": "images/home/troops/miner/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Minion",
+    "aliases": [],
+    "maxLevel": 14,
+    "imageUrl": "images/home/troops/minion/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "P.E.K.K.A",
+    "aliases": [],
+    "maxLevel": 13,
+    "imageUrl": "images/home/troops/pekka/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Root Rider",
+    "aliases": [],
+    "maxLevel": 3,
+    "imageUrl": "images/home/troops/root-rider/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Thrower",
+    "aliases": [],
+    "maxLevel": 4,
+    "imageUrl": "images/home/troops/thrower/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Valkyrie",
+    "aliases": [],
+    "maxLevel": 11,
+    "imageUrl": "images/home/troops/valkyrie/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Wall Breaker",
+    "aliases": [],
+    "maxLevel": 14,
+    "imageUrl": "images/home/troops/wall-breaker/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Witch",
+    "aliases": [],
+    "maxLevel": 8,
+    "imageUrl": "images/home/troops/witch/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Wizard",
+    "aliases": [],
+    "maxLevel": 14,
+    "imageUrl": "images/home/troops/wizard/icon.png"
+  },
+  {
+    "base": "home",
+    "category": "troops",
+    "name": "Yeti",
+    "aliases": [],
+    "maxLevel": 7,
+    "imageUrl": "images/home/troops/yeti/icon.png"
+  }
+]
