@@ -150,7 +150,7 @@ export function RosterPage() {
   const playerTag = useAppStore((s) => s.playerTag);
   const activeBase = useAppStore((s) => s.activeBase);
   const setActiveBase = useAppStore((s) => s.setActiveBase);
-  const { player, roster, loading } = usePlayerData(playerTag ?? "");
+  const { player, roster, loading } = usePlayerData(playerTag);
   const { sync, syncing, lastError } = useSync();
 
   const [query, setQuery] = useState("");

@@ -397,7 +397,7 @@ function BattleRow({ battle }: { battle: BattleEntry }) {
 
 export function BattlesPage() {
   const playerTag = useAppStore((s) => s.playerTag);
-  const { items, fetchedAt, loading } = useBattleLog(playerTag ?? "");
+  const { items, fetchedAt, loading } = useBattleLog(playerTag);
   const { sync, syncing, lastError } = useSync();
   const [filter, setFilter] = useState<Filter>("all");
 

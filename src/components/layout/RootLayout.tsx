@@ -1,4 +1,4 @@
-import { Link, Outlet, useRouterState } from "@tanstack/react-router";
+import { Link, Outlet, useNavigate } from "@tanstack/react-router";
 import {
   ArrowLeftRight,
   Crosshair,
@@ -21,10 +21,10 @@ const NAV: {
   label: string;
   icon: ComponentType<{ className?: string }>;
 }[] = [
-  { to: "/", label: "Overview", icon: Gauge },
+  { to: "/overview", label: "Overview", icon: Gauge },
   { to: "/roster", label: "Roster", icon: Swords },
   { to: "/battles", label: "Battles", icon: Crosshair },
-  { to: "/setup", label: "Accounts", icon: Settings2 },
+  { to: "/accounts", label: "Accounts", icon: Settings2 },
 ];
 
 function NavItem({
@@ -41,7 +41,6 @@ function NavItem({
   return (
     <Link
       to={to}
-      activeOptions={{ exact: to === "/" }}
       className={cn(
         "group text-muted-foreground hover:text-foreground relative flex items-center gap-3 text-sm font-medium transition-colors",
         compactLayout
@@ -67,9 +66,12 @@ export function RootLayout() {
   const switchAccount = useAppStore((s) => s.switchAccount);
   const { sync, syncing, syncStatus } = useSync();
   const online = useBackendOnline();
-  const onSetup = useRouterState({
-    select: (s) => s.location.pathname === "/setup",
-  });
+  const navigate = useNavigate();
+
+  const forget = async () => {
+    reset();
+    if (!useAppStore.getState().playerTag) await navigate({ to: "/" });
+  };
 
   const showNav = Boolean(playerTag);
   const current = accounts.find((a) => a.tag === playerTag);
@@ -91,7 +93,7 @@ export function RootLayout() {
     <div className="flex min-h-screen">
       {showNav && (
         <aside className="border-hairline sticky top-0 hidden h-screen w-56 shrink-0 flex-col border-r px-6 py-7 md:flex">
-          <Link to="/" className="flex items-center gap-2.5">
+          <Link to="/overview" className="flex items-center gap-2.5">
             <Shield className="text-primary h-5 w-5" />
             <span className="text-[15px] font-semibold tracking-tight">
               Clash Tracker
@@ -152,7 +154,7 @@ export function RootLayout() {
             {syncControl}
             <button
               type="button"
-              onClick={reset}
+              onClick={forget}
               className="text-muted-foreground hover:text-destructive mt-1 inline-flex items-center gap-2 text-xs transition-colors"
             >
               <LogOut className="h-3.5 w-3.5" />
@@ -176,7 +178,10 @@ export function RootLayout() {
 
         {showNav && (
           <header className="border-hairline bg-background/80 sticky top-0 z-30 flex items-center justify-between gap-4 border-b px-5 py-3 backdrop-blur md:hidden">
-            <Link to="/" className="flex items-center gap-2 font-semibold">
+            <Link
+              to="/overview"
+              className="flex items-center gap-2 font-semibold"
+            >
               <Shield className="text-primary h-4.5 w-4.5" />
               Clash Tracker
               <span className="text-muted-foreground tnum text-xs font-normal">
@@ -190,7 +195,7 @@ export function RootLayout() {
         <main
           className={cn(
             "mx-auto w-full flex-1 px-5 py-8 md:px-10 md:py-10",
-            onSetup ? "max-w-xl" : "max-w-5xl",
+            showNav ? "max-w-5xl" : "max-w-6xl",
             showNav && "pb-24 md:pb-10",
           )}
         >

@@ -55,8 +55,8 @@ function DashboardSkeleton() {
 export function DashboardPage() {
   const playerTag = useAppStore((s) => s.playerTag);
   const lastSyncAt = useAppStore((s) => s.lastSyncAt);
-  const { player, roster, loading } = usePlayerData(playerTag ?? "");
-  const { items: battles } = useBattleLog(playerTag ?? "");
+  const { player, roster, loading } = usePlayerData(playerTag);
+  const { items: battles } = useBattleLog(playerTag);
   const { sync, syncing, lastError } = useSync();
 
   const categories = useMemo(() => {

@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "@tanstack/react-router";
 import { useAction } from "convex/react";
 import { api } from "convex/_generated/api";
 import {
   ArrowLeftRight,
-  ArrowRight,
   BadgeCheck,
   Check,
   Loader2,
@@ -12,72 +10,29 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { TagForm } from "@/components/TagForm";
 import { ErrorNote } from "@/components/ui/bits";
 import { useAppStore } from "@/store/useAppStore";
-import { normalizeTag } from "@/lib/roster";
 import { friendlyError } from "@/lib/errors";
 import { cn } from "@/lib/utils";
 
-const TAG_PATTERN = /^[0289PYLQGRJCUV]{3,12}$/;
-
-export function SetupPage() {
-  const navigate = useNavigate();
-  const syncPlayer = useAction(api.players.sync.syncPlayer);
-
+export function AccountsPage() {
   const currentTag = useAppStore((s) => s.playerTag);
   const accounts = useAppStore((s) => s.accounts);
-  const addAccount = useAppStore((s) => s.addAccount);
   const switchAccount = useAppStore((s) => s.switchAccount);
   const removeAccount = useAppStore((s) => s.removeAccount);
   const markVerified = useAppStore((s) => s.markVerified);
-  const setSyncStatus = useAppStore((s) => s.setSyncStatus);
-  const setLastSyncAt = useAppStore((s) => s.setLastSyncAt);
-  const setLastError = useAppStore((s) => s.setLastError);
+
+  const navigate = useNavigate();
+
+  const forget = async (tag: string) => {
+    removeAccount(tag);
+    if (!useAppStore.getState().playerTag) await navigate({ to: "/" });
+  };
 
   const [verifying, setVerifying] = useState<string | null>(null);
-  const [input, setInput] = useState("");
-  const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const normalized = normalizeTag(input);
-  const invalid = input.length > 0 && !TAG_PATTERN.test(normalized);
-
-  const handleSave = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!normalized) return setError("Enter your player tag.");
-    if (!TAG_PATTERN.test(normalized)) {
-      return setError(
-        "That does not look like a player tag. Example: #20Q09Y0JU",
-      );
-    }
-
-    setSaving(true);
-    setError(null);
-    setSyncStatus("syncing");
-    try {
-      const result = await syncPlayer({ playerTag: normalized });
-      if (!result.ok) {
-        const message = friendlyError(result.error);
-        setError(message);
-        setSyncStatus("error");
-        setLastError(message);
-        return;
-      }
-      addAccount(normalized, result.name);
-      setLastSyncAt(result.fetchedAt);
-      setLastError(null);
-      setSyncStatus("idle");
-      await navigate({ to: "/" });
-    } catch (err) {
-      const message = friendlyError(err);
-      setError(message);
-      setSyncStatus("error");
-      setLastError(message);
-    } finally {
-      setSaving(false);
-    }
-  };
 
   return (
     <div className="flex flex-col gap-10 py-6">
@@ -173,7 +128,7 @@ export function SetupPage() {
 
                     <button
                       type="button"
-                      onClick={() => removeAccount(account.tag)}
+                      onClick={() => forget(account.tag)}
                       aria-label={`Remove ${account.name}`}
                       className="text-muted-foreground/60 hover:text-destructive transition-colors"
                     >
@@ -204,70 +159,9 @@ export function SetupPage() {
         </section>
       ) : null}
 
-      <form onSubmit={handleSave} className="flex flex-col gap-5">
-        <div className="flex flex-col gap-2">
-          <label
-            htmlFor="playerTag"
-            className="text-muted-foreground text-[11px] tracking-wide uppercase"
-          >
-            {currentTag ? "Add another player tag" : "Player tag"}
-          </label>
-          <div className="flex items-baseline gap-2">
-            <span className="text-muted-foreground text-2xl">#</span>
-            <input
-              id="playerTag"
-              value={input}
-              autoFocus
-              spellCheck={false}
-              autoCapitalize="characters"
-              onChange={(e) => setInput(e.target.value.toUpperCase())}
-              placeholder={currentTag ?? "20Q09Y0JU"}
-              aria-invalid={invalid}
-              className={cnInput(invalid)}
-            />
-          </div>
-          <p
-            className={
-              invalid
-                ? "text-destructive text-xs"
-                : "text-muted-foreground text-xs"
-            }
-          >
-            {invalid
-              ? "Tags only contain 0 2 8 9 P Y L Q G R J C U V."
-              : "In game: Settings → My Account → your tag is under your name."}
-          </p>
-        </div>
-
-        {error ? <ErrorNote message={error} /> : null}
-
-        <div>
-          <Button type="submit" disabled={saving || !input || invalid}>
-            {saving ? (
-              <>
-                <Loader2 className="animate-spin" />
-                Fetching village…
-              </>
-            ) : (
-              <>
-                {currentTag ? "Add account" : "Start tracking"}
-                <ArrowRight />
-              </>
-            )}
-          </Button>
-        </div>
-      </form>
+      <TagForm label="Add another player tag" submitLabel="Add account" />
     </div>
   );
-}
-
-function cnInput(invalid: boolean) {
-  return [
-    "tnum w-full border-b bg-transparent pb-2 text-2xl font-semibold tracking-wide outline-none placeholder:text-muted-foreground/40",
-    invalid
-      ? "border-destructive"
-      : "border-hairline focus:border-primary transition-colors",
-  ].join(" ");
 }
 
 function VerifyForm({

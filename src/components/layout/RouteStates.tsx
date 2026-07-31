@@ -55,7 +55,7 @@ export function RouteNotFound() {
       body="That page does not exist in the tracker."
       action={
         <Button asChild variant="outline">
-          <Link to="/">Back to overview</Link>
+          <Link to="/">Back to the start</Link>
         </Button>
       }
     />
